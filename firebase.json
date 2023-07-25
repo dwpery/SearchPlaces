@@ -5,6 +5,7 @@
   },
   "hosting": {
     "public": "public",
+    "site": "searchplaces",
     "ignore": [
       "firebase.json",
       "**/.*",
