@@ -10,7 +10,8 @@
   "author": "Pieter Edwards",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^10.4.0"
+    "firebase": "^10.4.0",
+    "y": "^0.3.2"
   },
   "devDependencies": {
     "webpack": "^5.88.2",
