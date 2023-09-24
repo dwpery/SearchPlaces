@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -11,15 +11,19 @@ const firebaseApp = initializeApp({
     measurementId: "G-NR9B6SXXG6"
 });
 
-const auth = getAuth(firebaseApp);
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
+
+document.getElementById("googleSignIn").addEventListener("click", () => {
+    signInWithRedirect(auth, provider);
+});
 
 // Detect Auth State
 
 onAuthStateChanged(auth, user => {
     if (user != null) {
-        console.log("Logged in!");
+        console.log(user);
     } else {
         console.log("No user");
     }
 });
-
