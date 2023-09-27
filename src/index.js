@@ -18,8 +18,7 @@ document.getElementById("googleSignIn").addEventListener("click", () => {
     signInWithRedirect(auth, provider);
 });
 
-
-window.onload = getRedirectResult(auth)
+getRedirectResult(auth)
     .then((result) => {
         // This gives you a Google Access Token. You can use it to access Google APIs.
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -45,11 +44,12 @@ document.getElementById("googleSignOut").addEventListener("click", () => {
 onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log(user);
-        document.getElementById("googleSignOut").hidden = false;
-        document.getElementById("googleSignIn").hidden = true;
+        document.getElementById("welcome").innerText = "Welcome, " + user.displayName + "!";
+        document.getElementById("signedIn").hidden = false;
+        document.getElementById("signedOut").hidden = true;
     } else {
         console.log("No user");
-        document.getElementById("googleSignOut").hidden = true;
-        document.getElementById("googleSignIn").hidden = false;
+        document.getElementById("signedIn").hidden = true;
+        document.getElementById("signedOut").hidden = false;
     }
 });
