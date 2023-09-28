@@ -11,12 +11,22 @@ h2 {
     color: #ba27a6;
 }
 
+#profileImg {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    height: 5vh;
+    border-radius: 50%;
+}
+
 #signedOut {
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    
+    padding: 5vh;
+    border-radius: 10%;
+    background-color: #f5f3ef;
     text-align: center;
 }
 

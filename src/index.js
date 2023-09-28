@@ -45,6 +45,7 @@ onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log(user);
         document.getElementById("welcome").innerText = "Welcome, " + user.displayName + "!";
+        document.getElementById("profileImg").src = user.photoURL;
         document.getElementById("signedIn").hidden = false;
         document.getElementById("signedOut").hidden = true;
     } else {
