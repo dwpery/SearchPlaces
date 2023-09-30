@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="/style/master.css">
 </head>
 <body>
-    <section id="signedOut">
-        <h2>SearchPlaces</h2>
-        <p>You must be signed in to continue</p>
-        <img src="/media/img/sign_in_google.png" id="googleSignIn" alt="Sign in with Google">
+    <section id="loader">
+        Loading...
     </section>
-    <section id="signedIn" hidden>
-        <div id="loader">
-            Loading...
-        </div>
-        <div id="toolMenu">
-            <img id="profileImg" src="" alt="Profile">
-        </div>
-        <div id="contentContainer">
-
-        </div>
+    <section id="app" hidden>
+        <section id="signedOut">
+            <h2>SearchPlaces</h2>
+            <p>You must be signed in to continue</p>
+            <img src="/media/img/sign_in_google.png" id="googleSignIn" alt="Sign in with Google">
+        </section>
+        <section id="signedIn" hidden>
+            <div id="toolMenu">
+                <img id="profileImg" src="" alt="Profile">
+            </div>
+            <div id="contentContainer">
+    
+            </div>
+        </section>
     </section>
 </body>
 </html>
