@@ -42,9 +42,10 @@ document.getElementById("googleSignOut").addEventListener("click", () => {
 // Detect Auth State
 
 onAuthStateChanged(auth, user => {
+    document.getElementById('loader').hidden = true;
+    document.getElementById('app').hidden = false;
     if (user != null) {
         console.log(user);
-        document.getElementById("welcome").innerText = "Welcome, " + user.displayName + "!";
         document.getElementById("profileImg").src = user.photoURL;
         document.getElementById("signedIn").hidden = false;
         document.getElementById("signedOut").hidden = true;
