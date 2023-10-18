@@ -13,9 +13,9 @@ h2 {
 
 #profileImg {
     position: fixed;
-    top: 2vh;
-    right: 2vh;
-    height: 6vh;
+    top: 2.5vh;
+    left: 2.5vh;
+    height: 7vh;
     border-radius: 50%;
 }
 
