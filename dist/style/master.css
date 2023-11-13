@@ -75,3 +75,14 @@ h2 {
 #googleSignIn:hover {
     cursor: pointer;
 }
+
+.addButton {
+    position: fixed;
+    height: 13vh;
+    left: 2vh;
+    bottom: 2vh;
+}
+
+.addButton:hover {
+    cursor: pointer;
+}
