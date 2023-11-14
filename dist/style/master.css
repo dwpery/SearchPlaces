@@ -76,13 +76,29 @@ h2 {
     cursor: pointer;
 }
 
-.addButton {
+.addButtonContainer {
     position: fixed;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    height: 22vh;
+    width: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.addButton {
+    position: absolute;
     height: 13vh;
-    left: 2vh;
-    bottom: 2vh;
+    border-radius: 50%;
 }
 
 .addButton:hover {
     cursor: pointer;
+}
+
+.ABbackground {
+    position: absolute;
+    transition: 0.5s;
+    height: 0;
 }

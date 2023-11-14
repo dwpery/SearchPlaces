@@ -59,7 +59,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fire
   \*********************/
 /***/ (() => {
 
-
+eval("function showAddMenu() {\n    const bg = document.getElementsByClassName(\"ABbackground\");\n\n    if (bg != '20vh') {\n        bg.style.height = '20vh';\n    } else {\n        bg.style.height = '0';\n    }\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWFpbi5qcyIsIm1hcHBpbmdzIjoiQUFBQTtBQUNBOztBQUVBO0FBQ0E7QUFDQSxNQUFNO0FBQ047QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vc2VhcmNocGxhY2VzLy4vc3JjL21haW4uanM/NTZkNyJdLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBzaG93QWRkTWVudSgpIHtcbiAgICBjb25zdCBiZyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlDbGFzc05hbWUoXCJBQmJhY2tncm91bmRcIik7XG5cbiAgICBpZiAoYmcgIT0gJzIwdmgnKSB7XG4gICAgICAgIGJnLnN0eWxlLmhlaWdodCA9ICcyMHZoJztcbiAgICB9IGVsc2Uge1xuICAgICAgICBiZy5zdHlsZS5oZWlnaHQgPSAnMCc7XG4gICAgfVxufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/main.js\n");
 
 /***/ }),
 
