@@ -106,14 +106,28 @@ h2 {
 
 .settingsIcon { height: 6vh; }
 
-.menuButton:hover .zoomIcon {
+.menuButton:hover .icon, .menuButton:hover .zoomIcon {
     cursor: pointer;
+}
+
+.menuButton:hover .zoomIcon {
     fill: #ba27a6;
 }
 
-.menuButton:hover .icon {
-    cursor: pointer;
+.menuButton:hover .addIcon {
     fill: #0000FF;
+}
+
+.menuButton:hover .propertiesIcon {
+    fill: #caca00;
+}
+
+.menuButton:hover .hideIcon {
+    fill: #008000;
+}
+
+.menuButton:hover .settingsIcon {
+    fill: #FF0000;
 }
 
 #zoomValue {
