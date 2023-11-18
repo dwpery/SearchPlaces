@@ -87,7 +87,7 @@ h2 {
     background-color: #f5f3ef;
 }
 
-.zoomButton, #zoomValue {
+.menuButton, #zoomValue {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,14 +96,24 @@ h2 {
     width: inherit;
 }
 
-.zoomIcon {
+.zoomIcon, .icon {
     height: 4vh;
     transition: 0.5s;
+    fill: #000000;
 }
 
-.zoomButton:hover .zoomIcon, .zoomButton:hover {
+.icon { height: 5vh; }
+
+.settingsIcon { height: 6vh; }
+
+.menuButton:hover .zoomIcon {
     cursor: pointer;
     fill: #ba27a6;
+}
+
+.menuButton:hover .icon {
+    cursor: pointer;
+    fill: #0000FF;
 }
 
 #zoomValue {
@@ -115,6 +125,17 @@ h2 {
     text-align: center;
     border-top: 1px solid #B3B3B3;
     border-bottom: 1px solid #B3B3B3;
+}
+
+.contentControls {
+    position: fixed;
+    left: 2.5vh;
+    top: 31vh;
+    width: 7vh;
+    height: 21vh;
+    border-radius: 5vh;
+    box-shadow: 0 0 0.2cm rgba(0,0,0,0.5);
+    background-color: #f5f3ef;
 }
 
 .settingsContainer {
