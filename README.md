@@ -1,6 +1,7 @@
 <p align="center"><img height="125" src="/dist/media/img/SearchPlacesLogo.svg"></p>
-<h1 align="center"><b>SearchPlaces</b></h1>
-<p align="center"><a target="_blank" href="https://searchplaces.web.app/"><img src="/dist/media/img/PWAicon.svg"></a></p>
+<hr>
+<p align="center"><a target="_blank" href="https://searchplaces.web.app/"><img src="/dist/media/img/PWAicon.svg"></a><a target="_blank" href="https://github.com/dwpery/SearchPlaces/releases"><img src="/dist/media/img/PreReleaseIcon.svg"></a></p>
+<hr>
 <p><b>SearchPlaces</b> is a powerful Progressive Web App (PWA) that allows you to create custom browser homepages to act as your gateway to the web whenever you open your browser!</p>
 <h2>Contents</h2>
 <ol>
