@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect, signOut, getRedirectResult } from 'firebase/auth';
-import settings from './main.js';
+import openSettings from './main.js';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -57,6 +57,6 @@ onAuthStateChanged(auth, user => {
     }
 });
 
-document.getElementById("menuButton").addEventListener("click", () => {
-    settings();
+document.getElementById("settingsButton").addEventListener("click", () => {
+    openSettings();
 })

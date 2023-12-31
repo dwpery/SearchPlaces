@@ -1,5 +1,6 @@
-function settings() {
-    document.getElementById("settings").style.display = "block";
+function openSettings() {
+    document.getElementById("settingsContainer").classList.remove("closeSettings");
+    document.getElementById("settingsContainer").classList.add("openSettings");
 }
 
-export default settings
+export default openSettings
