@@ -6,9 +6,8 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h2 {
-    font-size: 5vh;
-    color: #ba27a6;
+.signInLogo {
+    height: 6vh;
 }
 
 #profileImg {
