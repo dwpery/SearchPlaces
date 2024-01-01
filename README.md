@@ -1,4 +1,4 @@
-<p align="center"><img height="125" src="/dist/media/img/SearchPlacesLogo.svg"></p>
+<p align="center"><img height="100" src="/dist/media/img/SearchPlacesLogo.svg"></p>
 <hr>
 <p align="center"><a target="_blank" href="https://searchplaces.web.app/"><img src="/dist/media/img/PWAicon.svg"></a><a target="_blank" href="https://github.com/dwpery/SearchPlaces/releases"><img src="/dist/media/img/PreReleaseIcon.svg"></a></p>
 <hr>
