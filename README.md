@@ -8,7 +8,7 @@
 <li><a href="#1">When is the initial release?</a></li>
 <li><a href="#2">Building from Source Code?</a></li>
 </ol>
-<h2 id="2">When is the initial release?</h2>
+<h2 id="1">When is the initial release?</h2>
 <p>SearchPlaces is currently slated for a summer 2024 release, wether this is feature complete and a ful v1.0.0 launch or a Beta Pre-release is still yet to be seen.</p>
 <h2 id="2">Building from Source Code?</h2>
 <p>Once the source code has been installed, run the following:</p>
