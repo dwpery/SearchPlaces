@@ -201,5 +201,27 @@ body {
     position: absolute;
     width: 60%;
     height: 100%;
+}
+
+.settingsHeader {
+    position: relative;
+    margin-top: 2vh;
+    width: 100%;
     background-color: blue;
+}
+
+.settingsHeaderText {
+    float: left;
+    font-size: 5vh;
+    font-weight: bolder;
+}
+
+.settingsCloseIcon {
+    float: right;
+    height: 5vh;
+    fill: #000;
+}
+
+#settingsClose:hover .settingsCloseIcon {
+    cursor: pointer;
 }

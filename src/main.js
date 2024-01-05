@@ -3,4 +3,9 @@ function openSettings() {
     document.getElementById("settingsContainer").classList.add("openSettings");
 }
 
-export default openSettings
+function closeSettings() {
+    document.getElementById("settingsContainer").classList.add("closeSettings");
+    document.getElementById("settingsContainer").classList.remove("openSettings");
+}
+
+export { openSettings, closeSettings};
