@@ -199,7 +199,7 @@ body {
 
 #settingsContent {
     position: absolute;
-    width: 60%;
+    width: 50%;
     height: 100%;
 }
 
@@ -212,13 +212,13 @@ body {
 
 .settingsHeaderText {
     float: left;
-    font-size: 5vh;
+    font-size: 7vh;
     font-weight: bolder;
 }
 
 .settingsCloseIcon {
     float: right;
-    height: 5vh;
+    height: 7vh;
     fill: #000;
 }
 
