@@ -14,4 +14,20 @@ function closeSettings() {
     document.getElementById("settingsContent").style.display = 'none';
 }
 
-export { openSettings, closeSettings};
+function openToolbox() {
+    document.getElementById("toolbox").classList.add("openSideMenu");
+}
+
+function closeToolbox() {
+    document.getElementById("toolbox").classList.remove("openSideMenu");
+}
+
+function openProperties() {
+    document.getElementById("properties").classList.add("openSideMenu");
+}
+
+function closeProperties() {
+    document.getElementById("properties").classList.remove("openSideMenu");
+}
+
+export { openSettings, closeSettings, openToolbox, closeToolbox, openProperties, closeProperties};

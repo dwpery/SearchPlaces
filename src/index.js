@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect, signOut, getRedirectResult } from 'firebase/auth';
-import { openSettings, closeSettings} from './main.js';
+import { openSettings, closeSettings, openToolbox, closeToolbox, openProperties, closeProperties} from './main.js';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -63,4 +63,14 @@ document.getElementById("settingsButton").addEventListener("click", () => {
 
 document.getElementById("settingsClose").addEventListener("click", () => {
     closeSettings();
+})
+
+document.getElementById("toolboxButton").addEventListener("click", () => {
+    openToolbox();
+    closeProperties();
+})
+
+document.getElementById("propertiesButton").addEventListener("click", () => {
+    openProperties();
+    closeToolbox();
 })

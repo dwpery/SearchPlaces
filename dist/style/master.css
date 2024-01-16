@@ -266,3 +266,20 @@ body {
 hr {
     width: 40vw;
 }
+
+.sideMenu {
+    position: fixed;
+    height: 95vh;
+    width: 40vh;
+    left: -40vh;
+    top: 2vh;
+    transition: 0.75s;
+    border-radius: 5vh;
+    background-color: #F5F3EF;
+    box-shadow: 0 0 0.2cm rgba(0,0,0,0.5);
+}
+
+.openSideMenu {
+    left: 13vh;
+    box-shadow: 0 0 0.2cm rgba(0,0,0,0.5);
+}

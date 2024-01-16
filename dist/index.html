@@ -39,12 +39,12 @@
                     </div>
                 </div>
                 <div class="contentControls">
-                    <div class="menuButton">
+                    <div class="menuButton" id="toolboxButton">
                         <svg viewBox="0 0 100 100" class="icon addIcon">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM43 27C43 23.134 46.134 20 50 20C53.866 20 57 23.134 57 27V44H74.5C78.0899 44 81 46.9101 81 50.5C81 54.0899 78.0899 57 74.5 57H57V74C57 77.866 53.866 81 50 81C46.134 81 43 77.866 43 74V57H25.5C21.9102 57 19 54.0899 19 50.5C19 46.9101 21.9101 44 25.5 44H43V27Z"/>
                         </svg>
                     </div>
-                    <div class="menuButton">
+                    <div class="menuButton" id="propertiesButton">
                         <svg viewBox="0 0 100 100" class="icon propertiesIcon">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M43.1465 25C43.6992 23.4361 44 21.7532 44 20C44 18.2468 43.6992 16.5639 43.1465 15H90C92.7614 15 95 17.2386 95 20C95 22.7614 92.7614 25 90 25H43.1465ZM14.8535 25H11C8.23857 25 6 22.7614 6 20C6 17.2386 8.23858 15 11 15H14.8535C14.3008 16.5639 14 18.2468 14 20C14 21.7532 14.3008 23.4361 14.8535 25Z"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M43.1465 84C43.6992 82.4361 44 80.7532 44 79C44 77.2468 43.6992 75.5639 43.1465 74H90C92.7614 74 95 76.2386 95 79C95 81.7614 92.7614 84 90 84H43.1465ZM14.8535 84H11C8.23858 84 6 81.7614 6 79C6 76.2386 8.23858 74 11 74H14.8535C14.3008 75.5639 14 77.2468 14 79C14 80.7532 14.3008 82.4361 14.8535 84Z"/>
@@ -114,6 +114,10 @@
                         <div>Github Edition</div>
                     </div>
                 </div>
+            </div>
+            <div class="subMenus">
+                <div id="toolbox" class="sideMenu"></div>
+                <div id="properties" class="sideMenu"></div>
             </div>
             <div id="contentContainer">
                 <style id="contentStyle">
