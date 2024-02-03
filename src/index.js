@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChange } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -12,14 +12,13 @@ const firebaseApp = initializeApp({
     measurementId: "G-NR9B6SXXG6"
 })
 
-const app = initializeApp(firebaseApp);
-const analytics = getAnalytics(app);
+const analytics = getAnalytics(firebaseApp);
 
 const auth = getAuth(firebaseApp);
 
 // Detects auth state change
 
-onAuthStateChange(auth, user => {
+onAuthStateChanged(auth, user => {
     if (user != null) {
         console.log("Logged In!");
     } else {
