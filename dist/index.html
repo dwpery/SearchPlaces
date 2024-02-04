@@ -4,9 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <script src="bundle.js"></script>
+        <script defer src="bundle.js"></script>
+        <link rel="stylesheet" href="styles/master.css">
+        <link rel="stylesheet" href="styles/signedOut.css">
     </head>
     <body>
-    
+        <section id="loader">
+            Loading..
+        </section>
+        <section id="app" hidden>
+            <section id="signedOut">
+                <div class="wrapper">
+                    <img class="logInLogo" src="media/branding/fullLogoWhite.svg" alt="SearchPlaces">
+                    <p class="inputLabels">Email</p>
+                    <input class="loginInput" id="emailInput" type="text">
+                    <p class="inputLabels">Password</p>
+                    <input class="loginInput" id="passwordInput" type="password">
+                    <div class="authBtnContainer">
+                        <button class="loginBtn" id="logIn">Log In</button>
+                        <button class="loginBtn" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </section>
+            <section id="signedIn" hidden>
+
+            </section>
+        </section>
     </body>
 </html>
