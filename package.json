@@ -1,7 +1,7 @@
 {
   "name": "searchplaces",
-  "version": "0.0.1npm ",
-  "description": "Create a custom homescreen for your Search Engine",
+  "version": "0.0.1",
+  "description": "SearchPlaces is a powerful Progressive Web App (PWA) that allows you to create custom browser homepages to act as your gateway to the web whenever you open your browser!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,12 +9,11 @@
   "keywords": [],
   "author": "Pieter Edwards",
   "license": "ISC",
-  "dependencies": {
-    "firebase": "^10.4.0",
-    "y": "^0.3.2"
-  },
   "devDependencies": {
-    "webpack": "^5.88.2",
+    "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "firebase": "^10.8.0"
   }
 }

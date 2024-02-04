@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithRedirect, signOut, getRedirectResult } from 'firebase/auth';
-import { openSettings, closeSettings, openToolbox, closeToolbox, openProperties, closeProperties} from './main.js';
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -10,67 +10,54 @@ const firebaseApp = initializeApp({
     messagingSenderId: "224755692272",
     appId: "1:224755692272:web:de23fa86ff4034f8a9c835",
     measurementId: "G-NR9B6SXXG6"
-});
+})
 
-const auth = getAuth();
-const provider = new GoogleAuthProvider();
+const analytics = getAnalytics(firebaseApp);
 
-document.getElementById("googleSignIn").addEventListener("click", () => {
-    signInWithRedirect(auth, provider);
-});
+const auth = getAuth(firebaseApp);
 
-getRedirectResult(auth)
-    .then((result) => {
-        // This gives you a Google Access Token. You can use it to access Google APIs.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-
-        // The signed-in user info.
-        const user = result.user;
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        const email = error.customData.email;
-
-        const credential = GoogleAuthProvider.credentialFromError(error);
-    });
-
-document.getElementById("googleSignOut").addEventListener("click", () => {
-    signOut(auth);
-});
-
-// Detect Auth State
+// Detects auth state change
 
 onAuthStateChanged(auth, user => {
     document.getElementById('loader').hidden = true;
     document.getElementById('app').hidden = false;
     if (user != null) {
-        console.log(user);
-        document.getElementById("profileImg").src = user.photoURL;
-        document.getElementById("signedIn").hidden = false;
-        document.getElementById("signedOut").hidden = true;
+        console.log("Logged In!");
+        document.getElementById('signedOut').hidden = true;
+        document.getElementById('signedIn').hidden = false;
     } else {
-        console.log("No user");
-        document.getElementById("signedIn").hidden = true;
-        document.getElementById("signedOut").hidden = false;
+        console.log("Logged out!");
+        document.getElementById('signedOut').hidden = false;
+        document.getElementById('signedIn').hidden = true;
     }
 });
 
-document.getElementById("settingsButton").addEventListener("click", () => {
-    openSettings();
-})
+document.getElementById("signUp").addEventListener('click', () => {
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
 
-document.getElementById("settingsClose").addEventListener("click", () => {
-    closeSettings();
-})
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + " " + errorMessage);
+        });
+});
 
-document.getElementById("toolboxButton").addEventListener("click", () => {
-    openToolbox();
-    closeProperties();
-})
+document.getElementById("logIn").addEventListener('click', () => {
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
 
-document.getElementById("propertiesButton").addEventListener("click", () => {
-    openProperties();
-    closeToolbox();
-})
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => { 
+            const user = userCredential.user;
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + " " + errorMessage);
+        });
+});

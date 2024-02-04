@@ -1,6 +1,6 @@
-<p align="center"><img height="100" src="/dist/media/img/SearchPlacesLogo.svg"></p>
+<p align="center"><img height="100" src="/dist/media/branding/fullLogo.svg"></p>
 <hr>
-<p align="center"><a target="_blank" href="https://searchplaces.web.app/"><img src="/dist/media/img/PWAicon.svg"></a><a target="_blank" href="https://github.com/dwpery/SearchPlaces/releases"><img src="/dist/media/img/PreReleaseIcon.svg"></a></p>
+<p align="center"><a target="_blank" href="https://github.com/dwpery/SearchPlaces/releases"><img src="/dist/media/branding/PreReleaseIcon.svg"></a><a target="_blank" href="https://searchplaces.web.app/"><img src="/dist/media/branding/PWAicon.svg"></a></p>
 <hr>
 <p><b>SearchPlaces</b> is a powerful Progressive Web App (PWA) that allows you to create custom browser homepages to act as your gateway to the web whenever you open your browser!</p>
 <h2>Contents</h2>
@@ -9,7 +9,7 @@
 <li><a href="#2">Building from Source Code?</a></li>
 </ol>
 <h2 id="1">When is the initial release?</h2>
-<p>SearchPlaces is currently slated for a summer 2024 release, wether this is feature complete and a ful v1.0.0 launch or a Beta Pre-release is still yet to be seen.</p>
+<p>SearchPlaces is currently planned for a summer 2024 release, wether this is feature complete and a ful v1.0.0 launch or a Beta Pre-release is still yet to be seen but stay tuned and follow my socials for updates!</p>
 <h2 id="2">Building from Source Code?</h2>
 <p>Once the source code has been installed, run the following:</p>
 <code>npm install</code>
