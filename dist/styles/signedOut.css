@@ -56,6 +56,7 @@
 
 .loginBtn:hover {
     cursor: pointer;
+    background-color: #002092;
 }
 
 .orContainer {
@@ -88,12 +89,18 @@
     height: 9vh;
     width: 9vh;
     border-radius: 2vh;
-    background-color: #FFF;
+    background-color: #F0F0F0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
 } 
+
+.authBtn:hover {
+    cursor: pointer;
+    background-color: #cecece;
+}
 
 .authIcon {
     width: 8vh;
