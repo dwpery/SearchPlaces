@@ -36,7 +36,7 @@
 }
 
 .authBtnContainer {
-    margin: 2vh;
+    margin-top: 2vh;
     width: 80%;
     display: flex;
     justify-content: space-around;
@@ -56,6 +56,26 @@
 
 .loginBtn:hover {
     cursor: pointer;
+}
+
+.orContainer {
+    width: 85%;
+    margin: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.orBar {
+    width: 40%;
+    background-color: #FFF;
+    height: 1.5vh;
+    border-radius: 5vh;
+}
+
+.orLabel {
+    font-weight: bolder;
+    font-size: 3vh;
 }
 
 .iconBtnContainer {
