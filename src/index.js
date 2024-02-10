@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, getRedirectResult, GithubAuthProvider  } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, getRedirectResult, GithubAuthProvider, signOut  } from 'firebase/auth';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -24,6 +24,10 @@ document.getElementById('googleAuth').addEventListener('click', () => {
 
 document.getElementById('githubAuth').addEventListener('click', () => {
     signInWithRedirect(auth, githubProvider)
+});
+
+document.getElementById('userIcon').addEventListener('click', () => {
+    signOut(auth);
 });
 
 getRedirectResult(auth)
