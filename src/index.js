@@ -53,6 +53,13 @@ onAuthStateChanged(auth, user => {
     document.getElementById('app').hidden = false;
     if (user != null) {
         console.log("Logged In!");
+
+        if (user.photoURL != null) {
+            document.getElementById("userIcon").src = user.photoURL;
+        } else {
+            document.getElementById("userIcon").src = 'media/icons/userIcon.svg';
+        }
+        
         document.getElementById('signedOut').hidden = true;
         document.getElementById('signedIn').hidden = false;
     } else {
