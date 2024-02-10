@@ -68,6 +68,7 @@ document.getElementById("signUp").addEventListener('click', () => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            resetAuthPage();
             const user = userCredential.user;
         })
         .catch((error) => {
@@ -82,6 +83,7 @@ document.getElementById("logIn").addEventListener('click', () => {
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => { 
+            resetAuthPage();
             const user = userCredential.user;
         })
         .catch((error) => {
@@ -101,5 +103,14 @@ function checkErorr(errorCode) {
         document.getElementById("errorLabel").innerHTML = 'Email already in use! Please try a new one';
     } else if (errorCode == 'auth/weak-password') {
         document.getElementById("errorLabel").innerHTML = 'Password should be 6+ letters!';
+    }
+}
+
+function resetAuthPage() {
+    document.getElementById("errorLabel").innerHTML = '';
+    var inputLabelElements = document.getElementsByClassName("loginInput");
+
+    for (var i = 0; i < inputLabelElements.length; i++) {
+        inputLabelElements[i].value = "";
     }
 }
