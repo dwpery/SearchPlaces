@@ -20,6 +20,7 @@
                     <input class="loginInput" id="emailInput" type="text">
                     <p class="inputLabels">Password</p>
                     <input class="loginInput" id="passwordInput" type="password">
+                    <p id="errorLabel" class="inputLabels"></p>
                     <div class="authBtnContainer">
                         <button class="loginBtn" id="logIn">Log In</button>
                         <button class="loginBtn" id="signUp">Sign Up</button>
@@ -43,7 +44,12 @@
                 </div>
             </section>
             <section id="signedIn" hidden>
-                <img id="userIcon" class="userIcon" src="media/icons/userIcon.svg" alt="User">
+                <div id="tools">
+                    <img id="userIcon" class="userIcon" src="media/icons/userIcon.svg" alt="User">
+                </div>
+                <div id="userContent">
+                    <!-- User generated content goes here -->
+                </div>
             </section>
         </section>
     </body>

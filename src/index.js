@@ -72,8 +72,7 @@ document.getElementById("signUp").addEventListener('click', () => {
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode + " " + errorMessage);
+            checkErorr(errorCode);
         });
 });
 
@@ -87,7 +86,20 @@ document.getElementById("logIn").addEventListener('click', () => {
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode + " " + errorMessage);
+            checkErorr(errorCode);
         });
 });
+
+function checkErorr(errorCode) {
+    if (errorCode == "auth/missing-email" || errorCode == "auth/invalid-email") {
+        document.getElementById("errorLabel").innerHTML = 'Invalid or missing email! Please check and try again';
+    } else if (errorCode == 'auth/missing-password') {
+        document.getElementById("errorLabel").innerHTML = 'Missing password! Please input one and try again';
+    } else if (errorCode == 'auth/invalid-credential') {
+        document.getElementById("errorLabel").innerHTML = 'Email or Password is incorrect! Please check and try again';
+    } else if (errorCode == 'auth/email-already-in-use') {
+        document.getElementById("errorLabel").innerHTML = 'Email already in use! Please try a new one';
+    } else if (errorCode == 'auth/weak-password') {
+        document.getElementById("errorLabel").innerHTML = 'Password should be 6+ letters!';
+    }
+}
