@@ -121,3 +121,28 @@ function resetAuthPage() {
         inputLabelElements[i].value = "";
     }
 }
+
+// Zoom Code
+
+var zoom = 1;
+
+document.getElementById('zoomIn').addEventListener('click', () => {
+    if (zoom > 2) {
+        // Catches
+    } else {
+        zoom += 0.1;
+        document.getElementById('userContent').style.transform = 'scale(' + zoom + ')';
+        document.getElementById('zoomValue').innerHTML = Math.round(zoom * 100);
+    }
+});
+
+document.getElementById('zoomOut').addEventListener('click', () => {
+    if (zoom < 0.2) {
+        // Catches
+    } else {
+        zoom -= 0.1;
+        document.getElementById('userContent').style.transform = 'scale(' + zoom + ')';
+        document.getElementById('zoomValue').innerHTML = Math.round(zoom * 100);
+    }
+});
+
