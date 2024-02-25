@@ -40,11 +40,37 @@ body {
     border: 0.5vh solid #c0c0c0;
 }
 
+.curvedBorderTop {
+    border-radius: 2vh 2vh 0 0;
+}
+
+.curvedBorderBottom {
+    border-radius: 0 0 2vh 2vh;
+}
+
+.menuBtnHover:hover {
+    cursor: pointer;
+    background-color: #c0c0c0;
+}
+
+.menuBtnHover:hover svg path, .menuBtnHover:hover svg rect, .menuBtnHover:hover svg circle, .menuBtnHover:hover svg ellipse {
+    fill: #BA27A6;
+}
+
+.menuBtnHover:hover .hoverBorder {
+    stroke: #BA27A6;
+    fill: none;
+}
+
+path, rect, circle, ellipse {
+    transition: 0.5s;
+}
+
 .zoomControls {
     position: fixed;
     top: 10vh;
     left: 2vh;
-    height: 15vh;
+    height: 15.5vh;
     width: 6vh;
     border-radius: 2vh;
     background-color: #F0F0F0;
@@ -53,21 +79,11 @@ body {
 .zoomButton {
     height: 6vh;
     width: 6vh;
-    border-radius: 2vh 2vh 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-}
-
-.zoomButton:hover {
-    cursor: pointer;
-    background-color: #c0c0c0;
-}
-
-.bottom {
-    border-radius: 0 0 2vh 2vh;
 }
 
 #zoomValue {
@@ -78,8 +94,6 @@ body {
     font-size: 2vh;
     text-align: center;
     font-weight: bolder;
-    border-top: 0.1vh solid #000;
-    border-bottom: 0.1vh solid #000;
 }
 
 .zoomIcon {
@@ -114,7 +128,7 @@ body {
     height: 0.25vh;
     margin-left: 0.5vh;
     border-radius: 5vh;
-    background-color: #c0c0c0;
+    background-color: #000;
 }
 
 .searchBar {
