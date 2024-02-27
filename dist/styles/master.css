@@ -70,10 +70,10 @@ path, rect, circle, ellipse {
     position: fixed;
     top: 10vh;
     left: 2vh;
-    height: 15.5vh;
     width: 6vh;
     border-radius: 2vh;
     background-color: #F0F0F0;
+    border: 0.25vh solid #000;
 }
 
 .zoomButton {
@@ -107,6 +107,7 @@ path, rect, circle, ellipse {
     width: 6vh;
     border-radius: 2vh;
     background-color: #F0F0F0;
+    border: 0.25vh solid #000;
 }
 
 .mainButton {
