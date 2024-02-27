@@ -146,3 +146,14 @@ document.getElementById('zoomOut').addEventListener('click', () => {
     }
 });
 
+// Toolbox opening
+
+document.getElementById('toolboxBtn').addEventListener('click', () => {
+    document.getElementById("toolbox").classList.add("openSideMenu");
+    document.getElementById("properties").classList.remove("openSideMenu");
+})
+
+document.getElementById('propertiesBtn').addEventListener('click', () => {
+    document.getElementById("properties").classList.add("openSideMenu");
+    document.getElementById("toolbox").classList.remove("openSideMenu");
+})

@@ -20,7 +20,7 @@ body {
     transition: 0.25s;
 }
 
-#tools {
+#leftSideTools {
     position: absolute;
     z-index: 2;
 }
@@ -163,4 +163,21 @@ path, rect, circle, ellipse {
     font-size: 2vh;
     outline: none;
     border: none;
+}
+
+.sideMenu {
+    position: fixed;
+    left: -42vh;
+    top: 1.5vh;
+    width: 40vh;
+    height: 90vh;
+    background-color: #F0F0F0;
+    border-radius: 2vh;
+    border: 0.25vh solid #000;
+    z-index: 3;
+    transition: 0.5s;
+}
+
+.openSideMenu {
+    left: 12vh;
 }
