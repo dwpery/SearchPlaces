@@ -153,7 +153,15 @@ document.getElementById('toolboxBtn').addEventListener('click', () => {
     document.getElementById("properties").classList.remove("openSideMenu");
 })
 
+document.getElementById('closeToolbox').addEventListener('click', () => {
+    document.getElementById("toolbox").classList.remove("openSideMenu");
+})
+
 document.getElementById('propertiesBtn').addEventListener('click', () => {
     document.getElementById("properties").classList.add("openSideMenu");
     document.getElementById("toolbox").classList.remove("openSideMenu");
+})
+
+document.getElementById('closeProperties').addEventListener('click', () => {
+    document.getElementById("properties").classList.remove("openSideMenu");
 })
