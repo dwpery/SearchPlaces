@@ -50,6 +50,7 @@ getRedirectResult(auth)
 
 onAuthStateChanged(auth, user => {
     document.getElementById('loader').hidden = true;
+    document.getElementById('loader').style.display = 'none';
     document.getElementById('app').hidden = false;
     if (user != null) {
         console.log("Logged In!");
