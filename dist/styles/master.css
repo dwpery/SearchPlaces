@@ -181,3 +181,28 @@ path, rect, circle, ellipse {
 .openSideMenu {
     left: 12vh;
 }
+
+.submenuHeader {
+    position: relative;
+    height: 6vh;
+    width: 90%;
+    margin-left: 5%;
+    border-bottom: 0.25vh solid #000;
+}
+
+.submenuHeaderTxt {
+    font-size: 5vh;
+    font-weight: bolder;
+    float: left;
+}
+
+.submenuHeaderBtn {
+    width: 5vh;
+    margin-top: 0.5vh;
+    float: right;
+}
+
+.submenuHeaderBtn:hover {
+    fill: #BA27A6;
+    cursor: pointer;
+}
