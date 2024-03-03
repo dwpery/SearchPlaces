@@ -140,9 +140,9 @@
                         </svg>
                     </div>
                     <div class="submenuSubheading" inert>Text</div>
-                    <div class="submenuBtn heading1">Heading 1</div>
-                    <div class="submenuBtn heading2">Heading 2</div>
-                    <div class="submenuBtn heading3">Heading 3</div>
+                    <div class="submenuBtn heading1"><span inert>Heading 1</span></div>
+                    <div class="submenuBtn heading2"><span inert>Heading 2</span></div>
+                    <div class="submenuBtn heading3"><span inert>Heading 3</span></div>
                     <div class="submenuSubheading" inert>Media</div>
                     <div class="submenuBtn heading3">
                         <svg class="submenuBtnImg" viewBox="0 0 100 100" fill="none">
@@ -154,21 +154,21 @@
                             <path d="M52.4791 45.1098L66.8837 74.3054H38.0746L52.4791 45.1098Z" fill="black"/>
                             <path d="M52.4791 45.1098L66.8837 74.3054H38.0746L52.4791 45.1098Z" fill="black"/>
                         </svg>
-                        <span>by URL</span>                     
+                        <span inert>by URL</span>                     
                     </div>
                     <div class="submenuBtn heading3">
                         <svg class="submenuBtnImg" viewBox="0 0 100 100" fill="none">
                             <rect x="12" y="23.69" width="76" height="52.6154" rx="8" stroke="black" stroke-width="4"/>
                             <path d="M40.1634 45.3707C40.0185 44.8338 39.8054 44.3608 39.5241 43.9517C39.2429 43.5341 38.8977 43.1804 38.4886 42.8906C38.0795 42.6009 37.6108 42.3835 37.0824 42.2386C36.554 42.0852 35.9744 42.0085 35.3438 42.0085C34.0739 42.0085 32.9744 42.3153 32.0455 42.929C31.125 43.5426 30.4134 44.4375 29.9105 45.6136C29.4077 46.7812 29.1562 48.2003 29.1562 49.8707C29.1562 51.5497 29.3991 52.9815 29.8849 54.1662C30.3707 55.3509 31.0739 56.2543 31.9943 56.8764C32.9148 57.4986 34.0312 57.8097 35.3438 57.8097C36.5028 57.8097 37.483 57.6222 38.2841 57.2472C39.0938 56.8636 39.7074 56.3224 40.125 55.6236C40.5426 54.9247 40.7514 54.1023 40.7514 53.1562L41.9276 53.2969H35.5611V48.6818H46.8494V52.1463C46.8494 54.4901 46.3509 56.4972 45.3537 58.1676C44.3651 59.8381 43.0014 61.1207 41.2628 62.0156C39.5327 62.9105 37.5426 63.358 35.2926 63.358C32.7955 63.358 30.6009 62.8168 28.7088 61.7344C26.8168 60.652 25.3423 59.1094 24.2855 57.1065C23.2287 55.0952 22.7003 52.7088 22.7003 49.9474C22.7003 47.7997 23.0199 45.8949 23.6591 44.233C24.2983 42.5625 25.1889 41.1477 26.331 39.9886C27.4815 38.8295 28.8111 37.9517 30.3196 37.3551C31.8366 36.7585 33.4688 36.4602 35.2159 36.4602C36.733 36.4602 38.1435 36.6776 39.4474 37.1122C40.7599 37.5469 41.919 38.1605 42.9247 38.9531C43.9389 39.7457 44.7614 40.6875 45.392 41.7784C46.0227 42.8693 46.4148 44.0668 46.5682 45.3707H40.1634ZM56.9073 36.8182V63H50.5792V36.8182H56.9073ZM60.88 63V36.8182H78.7521V41.9574H67.2081V47.3267H77.6143V52.4787H67.2081V63H60.88Z" fill="black"/>
                         </svg>
-                        <span>by URL</span>
+                        <span inert>by URL</span>
                     </div>
                     <div class="submenuBtn heading3">
                         <svg class="submenuBtnImg" viewBox="0 0 100 100" fill="none">
                             <rect x="12" y="23.69" width="76" height="52.6154" rx="8" stroke="black" stroke-width="4"/>
                             <path d="M67.5 45.6699C70.8333 47.5944 70.8333 52.4056 67.5 54.3301L45 67.3205C41.6667 69.245 37.5 66.8394 37.5 62.9904V37.0096C37.5 33.1606 41.6667 30.755 45 32.6795L67.5 45.6699Z" fill="black"/>
                         </svg>
-                        <span>by URL</span>
+                        <span inert>by URL</span>
                     </div>
                     <div class="submenuSubheading" inert>Shapes</div>
                 </div>
@@ -183,11 +183,24 @@
                     <div class="submenuSubheading" inert>Search</div>
                     <div class="optionsContainer">
                         <div class="optionTxt">Search Engine</div>
-                        <div class="optionBtn">Google</div>
+                        <div class="optionBtn"><span inert>Google</span></div>
                     </div>
                     <div class="optionsContainer">
                         <div class="optionTxt">Destination</div>
-                        <div class="optionBtn">New Tab</div>
+                        <div class="optionBtn"><span inert>New Tab</span></div>
+                    </div>
+                    <div class="submenuSubheading" inert>Background</div>
+                    <div class="optionsContainer">
+                        <div class="optionTxt">Type</div>
+                        <div id="bgTypeBtn" class="optionBtn"><span inert>Colour</span></div>
+                    </div>
+                    <div id="bgColourOptions" class="optionsContainer">
+                        <div class="optionTxt">Colour</div>
+                        <div class="optionBtn"><span inert>Change</span></div>
+                    </div>
+                    <div id="bgImageOptions" class="optionsContainer" hidden>
+                        <div class="optionTxt">Image</div>
+                        <div class="optionBtn"><span inert>Change</span></div>
                     </div>
                 </div>
                 <div id="userContent">
