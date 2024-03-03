@@ -191,9 +191,8 @@ path, rect, circle, ellipse {
 }
 
 .submenuHeaderTxt {
-    font-size: 5vh;
-    font-weight: bolder;
     float: left;
+    font-weight: bolder;
 }
 
 .submenuHeaderBtn {
@@ -205,4 +204,32 @@ path, rect, circle, ellipse {
 .submenuHeaderBtn:hover {
     fill: #BA27A6;
     cursor: pointer;
+}
+
+.submenuSubheading {
+    margin-left: 5%;
+    margin-top: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.submenuBtn {
+    width: 90%;
+    margin-left: 4%;
+    border-radius: 2vh;
+    text-indent: 1vh;
+    padding: 0.5vh;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submenuBtn:hover {
+    cursor: pointer;
+    background-color: #c0c0c0;
+}
+
+.submenuBtnImg {
+    width: 6vh;
 }
