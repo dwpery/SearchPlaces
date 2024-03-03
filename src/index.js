@@ -166,3 +166,21 @@ document.getElementById('propertiesBtn').addEventListener('click', () => {
 document.getElementById('closeProperties').addEventListener('click', () => {
     document.getElementById("properties").classList.remove("openSideMenu");
 })
+
+// Properties buttons
+
+var bgType = false; // false = colour, true = Image
+
+document.getElementById('bgTypeBtn').addEventListener('click', () => {
+    if (bgType == false) {
+        document.getElementById('bgTypeBtn').innerHTML = '<span inert>Image</span>';
+        document.getElementById('bgColourOptions').hidden = true;
+        document.getElementById('bgImageOptions').hidden = false;
+        bgType = true;
+    } else {
+        document.getElementById('bgTypeBtn').innerHTML = '<span inert>Colour</span>';
+        document.getElementById('bgColourOptions').hidden = false;
+        document.getElementById('bgImageOptions').hidden = true;
+        bgType = false;
+    }
+})
