@@ -233,3 +233,35 @@ path, rect, circle, ellipse {
 .submenuBtnImg {
     width: 6vh;
 }
+
+.optionsContainer {
+    width: 90%;
+    margin-left: 5%;
+    clear: both;
+    height: 3.5vh;
+}
+
+.optionTxt {
+    float: left;
+    font-size: 3vh;
+}
+
+.optionsContainer {
+    margin-top: 1vh;
+}
+
+.optionBtn {
+    float: right;
+    font-size: 2vh;
+    padding: 0.5vh 1vh;
+    background-color: #000;
+    border-radius: 2vh;
+    font-weight: bold;
+    color: #FFF;
+    transition: 0.5s;
+}
+
+.optionBtn:hover {
+    cursor: pointer;
+    background-color: #BA27A6;
+}
