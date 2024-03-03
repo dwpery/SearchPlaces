@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root {
+    --themeColour: #BA27A6;
+}
+  
+
 body {
     margin: 0;
     padding: 0;
@@ -54,11 +59,11 @@ body {
 }
 
 .menuBtnHover:hover svg path, .menuBtnHover:hover svg rect, .menuBtnHover:hover svg circle, .menuBtnHover:hover svg ellipse {
-    fill: #BA27A6;
+    fill: var(--themeColour);
 }
 
 .menuBtnHover:hover .hoverBorder {
-    stroke: #BA27A6;
+    stroke: var(--themeColour);
     fill: none;
 }
 
@@ -202,7 +207,7 @@ path, rect, circle, ellipse {
 }
 
 .submenuHeaderBtn:hover {
-    fill: #BA27A6;
+    fill: var(--themeColour);
     cursor: pointer;
 }
 
@@ -263,5 +268,5 @@ path, rect, circle, ellipse {
 
 .optionBtn:hover {
     cursor: pointer;
-    background-color: #BA27A6;
+    background-color: var(--themeColour);
 }
