@@ -176,11 +176,23 @@ document.getElementById('bgTypeBtn').addEventListener('click', () => {
         document.getElementById('bgTypeBtn').innerHTML = '<span inert>Image</span>';
         document.getElementById('bgColourOptions').hidden = true;
         document.getElementById('bgImageOptions').hidden = false;
+
+        document.getElementById('userContent').classList.add('bgImage');
+        document.getElementById('userContent').classList.remove('bgColour');
+
         bgType = true;
     } else {
         document.getElementById('bgTypeBtn').innerHTML = '<span inert>Colour</span>';
         document.getElementById('bgColourOptions').hidden = false;
         document.getElementById('bgImageOptions').hidden = true;
+
+        document.getElementById('userContent').classList.remove('bgImage');
+        document.getElementById('userContent').classList.add('bgColour');
+
         bgType = false;
     }
+})
+
+document.getElementById('bgColourSelector').addEventListener('input', () => {
+    document.documentElement.style.setProperty('--bgColour', document.getElementById('bgColourSelector').value);
 })

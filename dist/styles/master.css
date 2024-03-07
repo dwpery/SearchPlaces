@@ -2,6 +2,8 @@
 
 :root {
     --themeColour: #BA27A6;
+    --bgColour: #fff;
+    --bgImage: url('https://t4.ftcdn.net/jpg/05/72/82/85/360_F_572828530_ofzCYowQVnlOwkcoBJnZqT36klbJzWdn.jpg');
 }
   
 
@@ -23,6 +25,15 @@ body {
     height: 100%;
     z-index: 1;
     transition: 0.25s;
+}
+
+.bgColour {
+    background-color: var(--bgColour);
+}
+
+.bgImage {
+    background-image: var(--bgImage);
+    background-size: cover;
 }
 
 #leftSideTools {
@@ -269,4 +280,21 @@ path, rect, circle, ellipse {
 .optionBtn:hover {
     cursor: pointer;
     background-color: var(--themeColour);
+}
+
+#bgColourSelector {
+    float: right;
+    border-radius: 2vh;
+    padding: 0.5vh 1vh;
+    height: 2vh;
+    box-sizing: content-box;
+    block-size: auto;
+    background-color: var(--bgColour);
+    border: 0.5vh solid #000;
+    transition: 0.5s;
+}
+
+#bgColourSelector:hover {
+    cursor: pointer;
+    border-color: var(--themeColour);
 }
