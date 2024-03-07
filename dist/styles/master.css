@@ -136,6 +136,22 @@ path, rect, circle, ellipse {
     transition: 0.5s;
 }
 
+.tooltip {
+    position: absolute;
+    left: 7vh;
+    background-color: #36454F;
+    color: #fff;
+    border-radius: 2vh;
+    padding: 0.5vh 1vh;
+    transition: 0.5s;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.mainButton:hover .tooltip, .zoomButton:hover .tooltip {
+    opacity: 1;
+}
+
 .menuIcon {
     width: 5vh;
 }
