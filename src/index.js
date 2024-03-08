@@ -216,6 +216,16 @@ var searchEngine = 0;
 var searchQuery = "";
 
 document.getElementById('searchIcon').addEventListener('click', () => {
+    search()
+})
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === "Enter" && document.activeElement === document.getElementById('searchBox')) {
+        search();
+    }
+})
+
+function search() {
     if (document.getElementById('searchBox').value != "") {
         searchQuery = searchLinks[searchEngine] + document.getElementById('searchBox').value.replace(/\s/g, "+");
         if (searchDestination == false) {
@@ -224,4 +234,4 @@ document.getElementById('searchIcon').addEventListener('click', () => {
             window.location.href = searchQuery;
         }
     }
-})
+}
