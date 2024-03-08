@@ -176,8 +176,12 @@ path, rect, circle, ellipse {
     background-color: #F0F0F0;
 }
 
-.searchIcon {
+#searchIcon {
     height: 4vh;
+}
+
+#searchIcon:hover {
+    cursor: pointer;
 }
 
 .searchDecor {

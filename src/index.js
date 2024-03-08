@@ -196,3 +196,14 @@ document.getElementById('bgTypeBtn').addEventListener('click', () => {
 document.getElementById('bgColourSelector').addEventListener('input', () => {
     document.documentElement.style.setProperty('--bgColour', document.getElementById('bgColourSelector').value);
 })
+
+// Search Function
+
+var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=');
+var searchEngine = 0;
+var searchQuery = "";
+
+document.getElementById('searchIcon').addEventListener('click', () => {
+    searchQuery = searchLinks[searchEngine] + document.getElementById('searchBox').value.replace(/\s/g, "+");
+    window.open(searchQuery, '_blank');
+})
