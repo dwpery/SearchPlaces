@@ -199,11 +199,29 @@ document.getElementById('bgColourSelector').addEventListener('input', () => {
 
 // Search Function
 
+var searchDestination = false; // false = new tab, true = same tab
+
+document.getElementById('searchDestinationBtn').addEventListener('click', () => {
+    if (searchDestination == false) {
+        document.getElementById('searchDestinationBtn').innerHTML = '<span inert>This Tab</span>';
+        searchDestination = true;
+    } else {
+        document.getElementById('searchDestinationBtn').innerHTML = '<span inert>New Tab</span>';
+        searchDestination = false;
+    }
+})
+
 var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=');
 var searchEngine = 0;
 var searchQuery = "";
 
 document.getElementById('searchIcon').addEventListener('click', () => {
-    searchQuery = searchLinks[searchEngine] + document.getElementById('searchBox').value.replace(/\s/g, "+");
-    window.open(searchQuery, '_blank');
+    if (document.getElementById('searchBox').value != "") {
+        searchQuery = searchLinks[searchEngine] + document.getElementById('searchBox').value.replace(/\s/g, "+");
+        if (searchDestination == false) {
+            window.open(searchQuery, '_blank');
+        } else {
+            window.location.href = searchQuery;
+        }
+    }
 })
