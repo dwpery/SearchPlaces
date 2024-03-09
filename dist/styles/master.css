@@ -212,6 +212,7 @@ path, rect, circle, ellipse {
     border: 0.25vh solid #000;
     z-index: 3;
     transition: 0.5s;
+    overflow-y: scroll;
 }
 
 .openSideMenu {
