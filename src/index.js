@@ -199,6 +199,53 @@ document.getElementById('bgColourSelector').addEventListener('input', () => {
 
 // Search Function
 
+var searchEngine = 0;
+
+document.getElementById('searchEngineBtn').addEventListener('click', () => {
+    document.getElementById('searchEngineBtn').hidden = true;
+    document.getElementById('searchEngineSelect').hidden = false;
+})
+
+document.getElementById('googleBtn').addEventListener('click', () => {
+    document.getElementById('searchEngineBtn').innerHTML = '<span inert>Google</span>';
+    searchEngine = 0;
+
+    document.getElementById('searchEngineBtn').hidden = false;
+    document.getElementById('searchEngineSelect').hidden = true;
+})
+
+document.getElementById('bingBtn').addEventListener('click', () => {
+    document.getElementById('searchEngineBtn').innerHTML = '<span inert>Bing</span>';
+    searchEngine = 1;
+
+    document.getElementById('searchEngineBtn').hidden = false;
+    document.getElementById('searchEngineSelect').hidden = true;
+})
+
+document.getElementById('braveBtn').addEventListener('click', () => {
+    document.getElementById('searchEngineBtn').innerHTML = '<span inert>Brave</span>';
+    searchEngine = 2;
+
+    document.getElementById('searchEngineBtn').hidden = false;
+    document.getElementById('searchEngineSelect').hidden = true;
+})
+
+document.getElementById('duckduckgoBtn').addEventListener('click', () => {
+    document.getElementById('searchEngineBtn').innerHTML = 'DuckDuckGo';
+    searchEngine = 3;
+
+    document.getElementById('searchEngineBtn').hidden = false;
+    document.getElementById('searchEngineSelect').hidden = true;
+})
+
+document.getElementById('ecosiaBtn').addEventListener('click', () => {
+    document.getElementById('searchEngineBtn').innerHTML = 'Ecosia';
+    searchEngine = 4;
+
+    document.getElementById('searchEngineBtn').hidden = false;
+    document.getElementById('searchEngineSelect').hidden = true;
+})
+
 var searchDestination = false; // false = new tab, true = same tab
 
 document.getElementById('searchDestinationBtn').addEventListener('click', () => {
@@ -212,18 +259,7 @@ document.getElementById('searchDestinationBtn').addEventListener('click', () => 
 })
 
 var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=');
-var searchEngine = 0;
 var searchQuery = "";
-
-document.getElementById('searchIcon').addEventListener('click', () => {
-    search()
-})
-
-document.addEventListener('keydown', (event) => {
-    if (event.key === "Enter" && document.activeElement === document.getElementById('searchBox')) {
-        search();
-    }
-})
 
 function search() {
     if (document.getElementById('searchBox').value != "") {
@@ -235,3 +271,13 @@ function search() {
         }
     }
 }
+
+document.getElementById('searchIcon').addEventListener('click', () => {
+    search()
+})
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === "Enter" && document.activeElement === document.getElementById('searchBox')) {
+        search();
+    }
+})

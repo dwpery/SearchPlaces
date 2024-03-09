@@ -302,6 +302,35 @@ path, rect, circle, ellipse {
     background-color: var(--themeColour);
 }
 
+.multiOptionSelector {
+    float: right;
+    text-align: center;
+    background-color: #000;
+    border-radius: 2vh;
+    margin-bottom: 1.5vh;
+}
+
+.multiOptionItem {
+    padding: 1vh;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+    font-size: 2vh;
+}
+
+.multiOptionItem:hover {
+    cursor: pointer;
+    background-color: var(--themeColour);
+}
+
+.multiOptionDivider {
+    width: 80%;
+    margin-left: 10%;
+    height: 0.25vh;
+    background-color: #fff;
+    border-radius: 2vh;
+}
+
 #bgColourSelector {
     float: right;
     border-radius: 2vh;
