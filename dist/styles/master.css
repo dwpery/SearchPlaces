@@ -347,3 +347,26 @@ path, rect, circle, ellipse {
     cursor: pointer;
     border-color: var(--themeColour);
 }
+
+.toolboxGrid {
+    display: grid;
+    width: 80%;
+    margin-left: 10%;
+    gap: 2vh;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gridItem {
+    height: 15vh;
+    border-radius: 2vh;
+    transition: 0.5s;
+}
+
+.gridItem:hover {
+    cursor: pointer;
+    background-color: #c0c0c0;
+}
+
+.toolboxSticker {
+    width: 15vh;
+}
