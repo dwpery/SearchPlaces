@@ -212,7 +212,16 @@ path, rect, circle, ellipse {
     border: 0.25vh solid #000;
     z-index: 3;
     transition: 0.5s;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 2vh;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 2vh;
 }
 
 .openSideMenu {
