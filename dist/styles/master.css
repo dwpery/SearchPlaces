@@ -271,8 +271,8 @@ path, rect, circle, ellipse {
 }
 
 .optionsContainer {
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
     clear: both;
     height: 3.5vh;
 }
