@@ -206,45 +206,25 @@ document.getElementById('searchEngineBtn').addEventListener('click', () => {
     document.getElementById('searchEngineSelect').hidden = false;
 })
 
-document.getElementById('googleBtn').addEventListener('click', () => {
-    document.getElementById('searchEngineBtn').innerHTML = '<span inert>Google</span>';
-    searchEngine = 0;
+const searchEngineButtons = [
+    { id: 'googleBtn', name: 'Google' },
+    { id: 'bingBtn', name: 'Bing' },
+    { id: 'braveBtn', name: 'Brave' },
+    { id: 'duckduckgoBtn', name: 'DuckDuckGo' },
+    { id: 'ecosiaBtn', name: 'Ecosia' },
+];
+  
+function updateSearchEngine(button) {
+    document.getElementById('searchEngineBtn').innerHTML = `<span inert>${button.name}</span>`;
+    searchEngine = searchEngineButtons.indexOf(button);
 
     document.getElementById('searchEngineBtn').hidden = false;
     document.getElementById('searchEngineSelect').hidden = true;
-})
-
-document.getElementById('bingBtn').addEventListener('click', () => {
-    document.getElementById('searchEngineBtn').innerHTML = '<span inert>Bing</span>';
-    searchEngine = 1;
-
-    document.getElementById('searchEngineBtn').hidden = false;
-    document.getElementById('searchEngineSelect').hidden = true;
-})
-
-document.getElementById('braveBtn').addEventListener('click', () => {
-    document.getElementById('searchEngineBtn').innerHTML = '<span inert>Brave</span>';
-    searchEngine = 2;
-
-    document.getElementById('searchEngineBtn').hidden = false;
-    document.getElementById('searchEngineSelect').hidden = true;
-})
-
-document.getElementById('duckduckgoBtn').addEventListener('click', () => {
-    document.getElementById('searchEngineBtn').innerHTML = 'DuckDuckGo';
-    searchEngine = 3;
-
-    document.getElementById('searchEngineBtn').hidden = false;
-    document.getElementById('searchEngineSelect').hidden = true;
-})
-
-document.getElementById('ecosiaBtn').addEventListener('click', () => {
-    document.getElementById('searchEngineBtn').innerHTML = 'Ecosia';
-    searchEngine = 4;
-
-    document.getElementById('searchEngineBtn').hidden = false;
-    document.getElementById('searchEngineSelect').hidden = true;
-})
+}
+  
+searchEngineButtons.forEach(button => {
+    document.getElementById(button.id).addEventListener('click', () => updateSearchEngine(button));
+});
 
 var searchDestination = false; // false = new tab, true = same tab
 
