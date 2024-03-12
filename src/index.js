@@ -261,3 +261,11 @@ document.addEventListener('keydown', (event) => {
         search();
     }
 })
+
+// User Content Creation
+
+import {createHeading} from "./userContentHandling.js";
+
+document.getElementById('h1Btn').addEventListener('click', () => {
+    createHeading('heading1');
+})
