@@ -34,6 +34,14 @@ class Heading {
 
 export function createHeading(type) {
     userElements[userElements.length] = new Heading(generateBase64Id(), type);
+
+    const element = document.createElement('div');
+    element.classList.add(type);
+    element.setAttribute('contenteditable', 'true');
+    element.textContent = 'Heading';
+
+    document.getElementById('userContent').appendChild(element);
+
     console.log(userElements);
 }
 

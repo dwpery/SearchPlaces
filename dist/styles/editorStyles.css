@@ -9,3 +9,5 @@
 .heading3 {
     font-size: 3vh;
 }
+
+#userContent .heading1, #userContent .heading2, #userContent .heading3 { width: fit-content; }
