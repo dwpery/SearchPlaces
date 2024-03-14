@@ -269,3 +269,11 @@ import {createHeading} from "./userContentHandling.js";
 document.getElementById('h1Btn').addEventListener('click', () => {
     createHeading('heading1');
 })
+
+document.getElementById('h2Btn').addEventListener('click', () => {
+    createHeading('heading2');
+})
+
+document.getElementById('h3Btn').addEventListener('click', () => {
+    createHeading('heading3');
+})
