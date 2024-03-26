@@ -1,3 +1,11 @@
+.editableElement {
+    position: absolute;
+}
+
+.editableElement:hover {
+    cursor: grab;
+}
+
 .heading1 {
     font-size: 7vh;
 }
