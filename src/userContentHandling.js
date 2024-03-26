@@ -20,23 +20,28 @@ function generateUUID() {
 
 // Allows text content to be changed
 function makeEditable(element) {
+    // Enables element editing
     element.addEventListener('click', () => {
         element.contentEditable = 'true';
         element.focus();
     })
 
+    // Deselects element
     element.addEventListener('blur', () => {
         element.contentEditable = 'false';
     })
 }
 
-// Enable dragging div
+// So document event listeners know an element is being dragged
 let isDragging = false;
+// Stores initial X + Y positions
 let initialX, initialY;
+// Stores selected element
 let currentDraggableElement = null;
 
 // Draggable Elements Handler
 function makeDraggable(element) {
+    // Enables dragging elements
     element.addEventListener('mousedown', (event) => {
         event.preventDefault();
         currentDraggableElement = event.target;
@@ -45,6 +50,7 @@ function makeDraggable(element) {
         initialY = event.clientY - element.offsetTop;
     })
 
+    // Updates element position in DOM
     document.addEventListener('mousemove', (event) => {
         if (isDragging) {
             currentDraggableElement.style.left = event.clientX - initialX + "px";
@@ -52,7 +58,8 @@ function makeDraggable(element) {
         }
     })
 
-    document.addEventListener('mouseup', (event) => {
+    // Resets dragging vars
+    document.addEventListener('mouseup', () => {
         isDragging = false;
         currentDraggableElement = null;
     })
