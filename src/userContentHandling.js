@@ -1,5 +1,4 @@
 // Generates Base 64 ID
-
 function generateBase64Id() {
     // Generate a UUID (Universally Unique Identifier)
     const uuid = generateUUID();
@@ -19,8 +18,7 @@ function generateUUID() {
     return uuid;
 }
 
-// Classes for new elements
-
+// Stores Classes for User Generated content
 var userElements = [];
 
 class Heading {
@@ -33,15 +31,19 @@ class Heading {
 }
 
 export function createHeading(type) {
-    userElements[userElements.length] = new Heading(generateBase64Id(), type);
+    // Generates unique ID used to refer to user created elements
+    const newID = generateBase64Id();
 
+    // Creates elments and appends to DOM
     const element = document.createElement('div');
+    element.id = newID;
     element.classList.add(type);
     element.setAttribute('contenteditable', 'true');
     element.textContent = 'Heading';
-
     document.getElementById('userContent').appendChild(element);
 
+    // Stores elements as Class
+    userElements[userElements.length] = new Heading(newID, type);
     console.log(userElements);
 }
 
