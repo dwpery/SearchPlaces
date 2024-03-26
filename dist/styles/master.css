@@ -41,19 +41,26 @@ body {
     z-index: 2;
 }
 
-.userIcon {
+.userIcon, .profileContainer {
     position: fixed;
-    left: 1.5vh;
+    left: 2vh;
     top: 1.5vh;
     height: 6vh;
+    width: 6vh;
     border-radius: 50%;
-    border: 0.5vh solid #F0F0F0;
+    background-color: #000;
+    border: 0.25vh solid #000;
     transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .userIcon:hover {
     cursor: pointer;
-    border: 0.5vh solid #c0c0c0;
+    border-color: var(--themeColour);
+    background-color: var(--themeColour);
 }
 
 .curvedBorderTop {
@@ -148,7 +155,7 @@ path, rect, circle, ellipse {
     white-space: nowrap;
 }
 
-.mainButton:hover .tooltip, .zoomButton:hover .tooltip {
+.mainButton:hover .tooltip, .zoomButton:hover .tooltip, .profileContainer:hover .tooltip {
     opacity: 1;
 }
 
