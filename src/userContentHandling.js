@@ -18,6 +18,46 @@ function generateUUID() {
     return uuid;
 }
 
+// Allows text content to be changed
+function makeEditable(element) {
+    element.addEventListener('click', () => {
+        element.contentEditable = 'true';
+        element.focus();
+    })
+
+    element.addEventListener('blur', () => {
+        element.contentEditable = 'false';
+    })
+}
+
+// Enable dragging div
+let isDragging = false;
+let initialX, initialY;
+let currentDraggableElement = null;
+
+// Draggable Elements Handler
+function makeDraggable(element) {
+    element.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        currentDraggableElement = event.target;
+        isDragging = true;
+        initialX = event.clientX - element.offsetLeft;
+        initialY = event.clientY - element.offsetTop;
+    })
+
+    document.addEventListener('mousemove', (event) => {
+        if (isDragging) {
+            currentDraggableElement.style.left = event.clientX - initialX + "px";
+            currentDraggableElement.style.top = event.clientY - initialY + "px";
+        }
+    })
+
+    document.addEventListener('mouseup', (event) => {
+        isDragging = false;
+        currentDraggableElement = null;
+    })
+}
+
 // Stores Classes for User Generated content
 var userElements = [];
 
@@ -37,11 +77,14 @@ export function createHeading(type) {
     // Creates elments and appends to DOM
     const element = document.createElement('div');
     element.id = newID;
-    element.classList.add(type);
-    element.setAttribute('contenteditable', 'true');
+    element.classList.add(type, 'editableElement');
     element.textContent = 'Heading';
     document.getElementById('userContent').appendChild(element);
 
+    // Adds draggable EventListeners
+    makeEditable(element);
+    makeDraggable(element);
+    
     // Stores elements as Class
     userElements[userElements.length] = new Heading(newID, type);
     console.log(userElements);
