@@ -55,7 +55,8 @@ function makeDraggable(element) {
         // Units used for conversion from 'px' to '%'
         var screenWidth = document.getElementById('userContent').offsetWidth;
         var screenHeight = document.getElementById('userContent').offsetHeight;
-        console.log(screenHeight, screenWidth)
+
+        // Applys position to element
         if (isDragging) {
             currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
             currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";

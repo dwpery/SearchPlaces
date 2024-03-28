@@ -197,15 +197,15 @@ document.getElementById('bgColourSelector').addEventListener('input', () => {
     document.documentElement.style.setProperty('--bgColour', document.getElementById('bgColourSelector').value);
 })
 
-// Search Function
+// Search Functions
 
-var searchEngine = 0;
-
+// Shows multi-option picker with SEs
 document.getElementById('searchEngineBtn').addEventListener('click', () => {
     document.getElementById('searchEngineBtn').hidden = true;
     document.getElementById('searchEngineSelect').hidden = false;
 })
 
+// Links button IDs with text for 'searchEngineBtn'
 const searchEngineButtons = [
     { id: 'googleBtn', name: 'Google' },
     { id: 'bingBtn', name: 'Bing' },
@@ -213,21 +213,30 @@ const searchEngineButtons = [
     { id: 'duckduckgoBtn', name: 'DuckDuckGo' },
     { id: 'ecosiaBtn', name: 'Ecosia' },
 ];
-  
+
+// Value repressenting link in 'searchLinks' array
+var searchEngine = 0;
+
+// Updates elected SE
 function updateSearchEngine(button) {
+    // Updates text of button and variable to new SE chosen
     document.getElementById('searchEngineBtn').innerHTML = `<span inert>${button.name}</span>`;
     searchEngine = searchEngineButtons.indexOf(button);
 
+    // Hides multi-option picker
     document.getElementById('searchEngineBtn').hidden = false;
     document.getElementById('searchEngineSelect').hidden = true;
 }
-  
+
+// Adds event listeners to all SE buttons
 searchEngineButtons.forEach(button => {
     document.getElementById(button.id).addEventListener('click', () => updateSearchEngine(button));
 });
 
-var searchDestination = false; // false = new tab, true = same tab
+// false = new tab, true = same tab
+var searchDestination = false;
 
+// Handles swapping Search Destination
 document.getElementById('searchDestinationBtn').addEventListener('click', () => {
     if (searchDestination == false) {
         document.getElementById('searchDestinationBtn').innerHTML = '<span inert>This Tab</span>';
@@ -238,12 +247,17 @@ document.getElementById('searchDestinationBtn').addEventListener('click', () => 
     }
 })
 
+// Stores all SE query links
 var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=');
+// Joins search link and query
 var searchQuery = "";
 
 function search() {
+    // Ensures box isn't empty
     if (document.getElementById('searchBox').value != "") {
+        // Buils link + query and spaces replaced by '+'
         searchQuery = searchLinks[searchEngine] + document.getElementById('searchBox').value.replace(/\s/g, "+");
+        // Directs user to their selected destination
         if (searchDestination == false) {
             window.open(searchQuery, '_blank');
         } else {
@@ -252,10 +266,12 @@ function search() {
     }
 }
 
+// Pressing SP logo will execute search()
 document.getElementById('searchIcon').addEventListener('click', () => {
     search()
 })
 
+// Pressing 'Enter' whilst Search Bar is selected will search()
 document.addEventListener('keydown', (event) => {
     if (event.key === "Enter" && document.activeElement === document.getElementById('searchBox')) {
         search();
