@@ -212,6 +212,7 @@ const searchEngineButtons = [
     { id: 'braveBtn', name: 'Brave' },
     { id: 'duckduckgoBtn', name: 'DuckDuckGo' },
     { id: 'ecosiaBtn', name: 'Ecosia' },
+    { id: 'startpageBtn', name: 'Startpage' }
 ];
 
 // Value repressenting link in 'searchLinks' array
@@ -248,7 +249,7 @@ document.getElementById('searchDestinationBtn').addEventListener('click', () => 
 })
 
 // Stores all SE query links
-var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=');
+var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=', 'https://www.startpage.com/sp/search?q=');
 // Joins search link and query
 var searchQuery = "";
 
