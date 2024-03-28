@@ -39,11 +39,6 @@ let initialX, initialY;
 // Stores selected element
 let currentDraggableElement = null;
 
-var updateWidthHeight = setInterval(function() {
-    console.log("This message appears every 2 seconds!");
-}, 50);
-  
-
 // Draggable Elements Handler
 function makeDraggable(element) {
     // Enables dragging elements
