@@ -1,5 +1,7 @@
 .editableElement {
     position: absolute;
+    padding: 1vh;
+    border-radius: 2vh;
 }
 
 .editableElement:hover {
