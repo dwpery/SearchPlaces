@@ -39,6 +39,11 @@ let initialX, initialY;
 // Stores selected element
 let currentDraggableElement = null;
 
+var updateWidthHeight = setInterval(function() {
+    console.log("This message appears every 2 seconds!");
+}, 50);
+  
+
 // Draggable Elements Handler
 function makeDraggable(element) {
     // Enables dragging elements
@@ -52,9 +57,13 @@ function makeDraggable(element) {
 
     // Updates element position in DOM
     document.addEventListener('mousemove', (event) => {
+        // Units used for conversion from 'px' to '%'
+        var screenWidth = document.getElementById('userContent').offsetWidth;
+        var screenHeight = document.getElementById('userContent').offsetHeight;
+        console.log(screenHeight, screenWidth)
         if (isDragging) {
-            currentDraggableElement.style.left = event.clientX - initialX + "px";
-            currentDraggableElement.style.top = event.clientY - initialY + "px";
+            currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
+            currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";
         }
     })
 
