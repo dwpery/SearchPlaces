@@ -281,16 +281,20 @@ document.addEventListener('keydown', (event) => {
 
 // User Content Creation
 
-import {createHeading} from "./userContentHandling.js";
+import {createHeading, createSticker} from "./userContentHandling.js";
 
 document.getElementById('h1Btn').addEventListener('click', () => {
     createHeading('heading1');
-})
+});
 
 document.getElementById('h2Btn').addEventListener('click', () => {
     createHeading('heading2');
-})
+});
 
 document.getElementById('h3Btn').addEventListener('click', () => {
     createHeading('heading3');
-})
+});
+
+document.getElementById('eek1Btn').addEventListener('click', () => {
+    createSticker('eek1');
+});

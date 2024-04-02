@@ -82,6 +82,13 @@ class Heading {
     }
 }
 
+class Sticker {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+
 export function createHeading(type) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
@@ -93,7 +100,7 @@ export function createHeading(type) {
     element.textContent = 'Heading';
     document.getElementById('userContent').appendChild(element);
 
-    // Adds draggable EventListeners
+    // Adds EventListeners
     makeEditable(element);
     makeDraggable(element);
     
@@ -102,3 +109,21 @@ export function createHeading(type) {
     console.log(userElements);
 }
 
+export function createSticker(type) {
+    // Generates unique ID used to refer to user created elements
+    const newID = generateBase64Id();
+
+    // Creates elments and appends to DOM
+    const element = document.createElement('img');
+    element.id = newID;
+    element.classList.add('editableElement');
+    element.src = 'media/stickers/' + type + '.svg';
+    document.getElementById('userContent').appendChild(element);
+
+    // Adds EventListeners
+    makeDraggable(element);
+
+    // Stores elements as Class
+    userElements[userElements.length] = new Sticker(newID, type);
+    console.log(userElements);
+}
