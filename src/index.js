@@ -281,7 +281,7 @@ document.addEventListener('keydown', (event) => {
 
 // User Content Creation
 
-import {createHeading, createSticker} from "./userContentHandling.js";
+import {createHeading, createSVG} from "./userContentHandling.js";
 
 document.getElementById('h1Btn').addEventListener('click', () => {
     createHeading('heading1');
@@ -296,5 +296,21 @@ document.getElementById('h3Btn').addEventListener('click', () => {
 });
 
 document.getElementById('eek1Btn').addEventListener('click', () => {
-    createSticker('eek1');
+    createSVG('eek1');
+});
+
+document.getElementById('squareBtn').addEventListener('click',() => {
+    createSVG('square');
+});
+
+document.getElementById('circleBtn').addEventListener('click',() => {
+    createSVG('circle');
+});
+
+document.getElementById('triangleBtn').addEventListener('click',() => {
+    createSVG('triangle');
+});
+
+document.getElementById('rectangleBtn').addEventListener('click',() => {
+    createSVG('rectangle');
 });

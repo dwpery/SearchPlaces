@@ -109,7 +109,7 @@ export function createHeading(type) {
     console.log(userElements);
 }
 
-export function createSticker(type) {
+export function createSVG(type) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
 
