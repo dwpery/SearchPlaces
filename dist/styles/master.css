@@ -255,7 +255,7 @@ path, rect, circle, ellipse {
     float: right;
 }
 
-.submenuHeaderBtn:hover {
+.submenuHeaderBtn:hover, .settingsHeaderImg:hover rect {
     fill: var(--themeColour);
     cursor: pointer;
 }
@@ -409,9 +409,14 @@ path, rect, circle, ellipse {
     opacity: 1;
 }
 
+.settingsContainer {
+    width: 45%;
+}
+
 .settingsHeader {
     height: 9vh;
-    width: 45%;
+    width: 100%;
+    border-bottom: 0.25vh solid #000;
 }
 
 .settingsHeaderTxt {
@@ -426,5 +431,16 @@ path, rect, circle, ellipse {
 }
 
 .settingsHeaderImg:hover {
+    cursor: pointer;
+}
+
+.setHeading {
+    margin-top: 2vh;
+    margin-left: 3vh;
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+.setHeading:hover {
     cursor: pointer;
 }
