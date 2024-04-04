@@ -314,3 +314,15 @@ document.getElementById('triangleBtn').addEventListener('click',() => {
 document.getElementById('rectangleBtn').addEventListener('click',() => {
     createSVG('rectangle');
 });
+
+// Opening / Closing settings
+
+document.getElementById('settingsBtn').addEventListener('click', () => {
+    document.getElementById('settings').classList.remove('sClosed');
+    document.getElementById('settings').classList.add('sOpen');
+});
+
+document.getElementById('settingsBtnClose').addEventListener('click', () => {
+    document.getElementById('settings').classList.add('sClosed');
+    document.getElementById('settings').classList.remove('sOpen');
+});

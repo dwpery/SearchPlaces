@@ -388,3 +388,43 @@ path, rect, circle, ellipse {
 .toolboxSticker {
     width: 10vh;
 }
+
+#settings {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #F0F0F0;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+.sClosed {
+    z-index: 0;
+    opacity: 0;
+}
+
+.sOpen {
+    z-index: 20;
+    opacity: 1;
+}
+
+.settingsHeader {
+    height: 9vh;
+    width: 45%;
+}
+
+.settingsHeaderTxt {
+    float: left;
+    font-weight: bolder;
+}
+
+.settingsHeaderImg {
+    margin-top: 1vh;
+    float: right;
+    width: 7vh;
+}
+
+.settingsHeaderImg:hover {
+    cursor: pointer;
+}
