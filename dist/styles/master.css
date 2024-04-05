@@ -439,8 +439,37 @@ path, rect, circle, ellipse {
     margin-left: 3vh;
     font-size: 5vh;
     font-weight: bold;
+    width: fit-content;
 }
 
 .setHeading:hover {
     cursor: pointer;
+}
+
+.settingBtnContainer {
+    width: 80%;
+    margin-left: 10%;
+    height: 5vh;
+    margin-bottom: 1vh;
+}
+
+.settingLbl {
+    float: left;
+    font-size: 4vh;
+}
+
+.settingBtn {
+    float: right;
+    font-size: 3vh;
+    padding: 0.75vh 1.5vh;
+    background-color: #000;
+    border-radius: 3vh;
+    font-weight: bold;
+    color: #FFF;
+    transition: 0.5s;
+}
+
+.settingBtn:hover {
+    cursor: pointer;
+    background-color: var(--themeColour);
 }
