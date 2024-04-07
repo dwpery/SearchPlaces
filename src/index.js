@@ -326,3 +326,17 @@ document.getElementById('settingsBtnClose').addEventListener('click', () => {
     document.getElementById('settings').classList.add('sClosed');
     document.getElementById('settings').classList.remove('sOpen');
 });
+
+// Settings containers opening
+
+document.getElementById('custSetHeader').addEventListener('click', () => {
+    if (document.getElementById('csContainer').hidden == true) {
+        document.getElementById('csContainer').hidden = false;
+        document.getElementById('csContainer').classList.add('settingsBtnConOpen');
+        document.getElementById('csContainer').classList.remove('settingsBtnConClosed');
+    } else {
+        document.getElementById('csContainer').classList.add('settingsBtnConClosed');
+        document.getElementById('csContainer').classList.remove('settingsBtnConOpen');
+        document.getElementById('csContainer').hidden = true;
+    }
+});

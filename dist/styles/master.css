@@ -451,11 +451,13 @@ path, rect, circle, ellipse {
     margin-left: 10%;
     height: 5vh;
     margin-bottom: 1vh;
+    transition: 0.5s;
 }
 
 .settingLbl {
     float: left;
     font-size: 4vh;
+    transition: 0.5s;
 }
 
 .settingBtn {
@@ -473,3 +475,16 @@ path, rect, circle, ellipse {
     cursor: pointer;
     background-color: var(--themeColour);
 }
+
+#csContainer {
+    transition: 0.5s;
+}
+
+.settingsBtnConClosed {
+    opacity: 0;
+}
+
+.settingsBtnConOpen {
+    opacity: 1;
+}
+
