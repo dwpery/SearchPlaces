@@ -329,14 +329,26 @@ document.getElementById('settingsBtnClose').addEventListener('click', () => {
 
 // Settings containers opening
 
-document.getElementById('custSetHeader').addEventListener('click', () => {
-    if (document.getElementById('csContainer').hidden == true) {
-        document.getElementById('csContainer').hidden = false;
-        document.getElementById('csContainer').classList.add('settingsBtnConOpen');
-        document.getElementById('csContainer').classList.remove('settingsBtnConClosed');
+function setConCollapse(name) {
+    if (document.getElementById(name).hidden == true) {
+        document.getElementById(name).hidden = false;
+        document.getElementById(name).classList.add('settingsBtnConOpen');
+        document.getElementById(name).classList.remove('settingsBtnConClosed');
     } else {
-        document.getElementById('csContainer').classList.add('settingsBtnConClosed');
-        document.getElementById('csContainer').classList.remove('settingsBtnConOpen');
-        document.getElementById('csContainer').hidden = true;
+        document.getElementById(name).classList.add('settingsBtnConClosed');
+        document.getElementById(name).classList.remove('settingsBtnConOpen');
+        document.getElementById(name).hidden = true;
     }
+}
+
+document.getElementById('genSetHeader').addEventListener('click', () => {
+    setConCollapse('gsContainer');
+});
+
+document.getElementById('custSetHeader').addEventListener('click', () => {
+    setConCollapse('csContainer');
+});
+
+document.getElementById('bdSetHeader').addEventListener('click', () => {
+    setConCollapse('bdsContainer');
 });
