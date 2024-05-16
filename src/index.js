@@ -193,6 +193,7 @@ document.getElementById('bgTypeBtn').addEventListener('click', () => {
     }
 })
 
+// Changes bgColour var
 document.getElementById('bgColourSelector').addEventListener('input', () => {
     document.documentElement.style.setProperty('--bgColour', document.getElementById('bgColourSelector').value);
 })
@@ -272,10 +273,16 @@ document.getElementById('searchIcon').addEventListener('click', () => {
     search()
 })
 
-// Pressing 'Enter' whilst Search Bar is selected will search()
+// All uses for Enter key
 document.addEventListener('keydown', (event) => {
+    // Searches query
     if (event.key === "Enter" && document.activeElement === document.getElementById('searchBox')) {
         search();
+    }
+
+    // Changes bgImage var
+    if (event.key === "Enter" && document.activeElement === document.getElementById('bgUrlInput')) {
+        document.documentElement.style.setProperty('--bgImage', "url('" + document.getElementById('bgUrlInput').value + "')");
     }
 })
 

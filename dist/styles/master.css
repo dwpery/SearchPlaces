@@ -366,6 +366,19 @@ path, rect, circle, ellipse {
     border-color: var(--themeColour);
 }
 
+#bgUrlInput {
+    float: right;
+    border-radius: 2vh;
+    padding: 0.5vh 1vh;
+    height: 2vh;
+    width: 15vh;
+    border: 0.5vh solid #000;
+    transition: 0.5s;
+    outline: none;
+}
+
+#bgUrlInput:hover { border-color: var(--themeColour); }
+
 .toolboxGrid {
     display: grid;
     width: 80%;
