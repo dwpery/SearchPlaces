@@ -40,6 +40,15 @@ body {
 #leftSideTools {
     position: absolute;
     z-index: 2;
+    transition: 0.5s;
+}
+
+.lstShow {
+    opacity: 1;
+}
+
+.lstHide {
+    opacity: 0;
 }
 
 .userIcon, .profileContainer {
