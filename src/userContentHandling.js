@@ -24,11 +24,15 @@ function makeEditable(element) {
     element.addEventListener('click', () => {
         element.contentEditable = 'true';
         element.focus();
+        document.getElementById('headingPropMenu').style.top = "calc(" + element.style.top + " - 2vh)";
+        document.getElementById('headingPropMenu').style.left = element.style.left;
+        document.getElementById('headingPropMenu').style.display = 'block';
     })
 
     // Deselects element
     element.addEventListener('blur', () => {
         element.contentEditable = 'false';
+        document.getElementById('headingPropMenu').style.display = 'none';
     })
 }
 
@@ -60,6 +64,9 @@ function makeDraggable(element) {
         if (isDragging) {
             currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
             currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";
+
+            document.getElementById('headingPropMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 2vh)";
+            document.getElementById('headingPropMenu').style.left = currentDraggableElement.style.left;
         }
     })
 
