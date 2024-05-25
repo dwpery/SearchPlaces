@@ -18,21 +18,24 @@ function generateUUID() {
     return uuid;
 }
 
+var currentPropMenu = "";
+
 // Allows text content to be changed
 function makeEditable(element) {
     // Enables element editing
     element.addEventListener('click', () => {
         element.contentEditable = 'true';
         element.focus();
-        document.getElementById('headingPropMenu').style.top = "calc(" + element.style.top + " - 2.5vh)";
-        document.getElementById('headingPropMenu').style.left = element.style.left;
-        document.getElementById('headingPropMenu').style.display = 'block';
+
+        document.getElementById('propMenu').style.top = "calc(" + element.style.top + " - 2.5vh)";
+        document.getElementById('propMenu').style.left = element.style.left;
+        document.getElementById('propMenu').style.display = 'block';
     })
 
     // Deselects element
     element.addEventListener('blur', () => {
         element.contentEditable = 'false';
-        document.getElementById('headingPropMenu').style.display = 'none';
+        document.getElementById('propMenu').style.display = 'none';
     })
 }
 
@@ -47,11 +50,23 @@ let currentDraggableElement = null;
 function makeDraggable(element) {
     // Enables dragging elements
     element.addEventListener('mousedown', (event) => {
+        // Sets up Dragging variables
         event.preventDefault();
         currentDraggableElement = event.target;
         isDragging = true;
         initialX = event.clientX - element.offsetLeft;
         initialY = event.clientY - element.offsetTop;
+
+        // Asses what element is selected and fills prop menu
+        for (var i = 0; i <= userElements.length - 1; i++) {
+            if (element.id == userElements[i].id) {
+                if (userElements[i].type == "heading") {
+                    document.getElementById('propMenu').innerHTML = 'Heading';
+                } else if (userElements[i].type == "sticker") {
+                    document.getElementById('propMenu').innerHTML = 'Sticker';
+                }
+            }
+        }
     })
 
     // Updates element position in DOM
@@ -65,8 +80,8 @@ function makeDraggable(element) {
             currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
             currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";
 
-            document.getElementById('headingPropMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 2.5vh)";
-            document.getElementById('headingPropMenu').style.left = currentDraggableElement.style.left;
+            document.getElementById('propMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 2.5vh)";
+            document.getElementById('propMenu').style.left = currentDraggableElement.style.left;
         }
     })
 
@@ -83,11 +98,13 @@ var userElements = [];
 // Class for User Elements
 class Element {
     constructor(id, css, type) {
+        // Standard values used by all Elements
         this.id = id;
         this.css = css;
-        this.type = type
+        this.type = type;
         
-        if (type == "text" || text == "heading") {
+        // Exclusive to Text based Elements
+        if (type == "text" || type == "heading") {
             this.bold = false;
             this.italic = false;
         }
@@ -98,7 +115,7 @@ export function createHeading(css) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
 
-    // Creates elments and appends to DOM
+    // Creates elment and appends to DOM
     const element = document.createElement('div');
     element.id = newID;
     element.classList.add(css, 'editableElement');
@@ -110,15 +127,15 @@ export function createHeading(css) {
     makeDraggable(element);
     
     // Stores elements as Class
-    userElements[userElements.length] = new Element(newID, css, "text");
-    console.log(userElements);
+    userElements[userElements.length] = new Element(newID, css, "heading");
+    console.log(userElements[0]);
 }
 
 export function createSVG(css) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
 
-    // Creates elments and appends to DOM
+    // Creates elment and appends to DOM
     const element = document.createElement('img');
     element.id = newID;
     element.classList.add('editableElement');
@@ -126,6 +143,7 @@ export function createSVG(css) {
     document.getElementById('userContent').appendChild(element);
 
     // Adds EventListeners
+    makeEditable(element);
     makeDraggable(element);
 
     // Stores elements as Class

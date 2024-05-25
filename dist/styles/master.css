@@ -510,12 +510,12 @@ path, rect, circle, ellipse {
     opacity: 1;
 }
 
-#headingPropMenu {
-    position: absolute;
-    width: 2vh;
-    height: 2vh;
-    z-index: 5;
+.propMenu {
     display: none;
+    position: absolute;
+    width: fit-content;
+    padding: 0.5vh;
+    z-index: 5;
     height: 2vh;
     border-radius: 1vh;
     background-color: #F0F0F0;
