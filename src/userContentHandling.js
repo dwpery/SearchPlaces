@@ -24,7 +24,7 @@ function makeEditable(element) {
     element.addEventListener('click', () => {
         element.contentEditable = 'true';
         element.focus();
-        document.getElementById('headingPropMenu').style.top = "calc(" + element.style.top + " - 2vh)";
+        document.getElementById('headingPropMenu').style.top = "calc(" + element.style.top + " - 2.5vh)";
         document.getElementById('headingPropMenu').style.left = element.style.left;
         document.getElementById('headingPropMenu').style.display = 'block';
     })
@@ -65,7 +65,7 @@ function makeDraggable(element) {
             currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
             currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";
 
-            document.getElementById('headingPropMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 2vh)";
+            document.getElementById('headingPropMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 2.5vh)";
             document.getElementById('headingPropMenu').style.left = currentDraggableElement.style.left;
         }
     })
@@ -80,30 +80,28 @@ function makeDraggable(element) {
 // Stores Classes for User Generated content
 var userElements = [];
 
-class Heading {
-    constructor(id, style) {
+// Class for User Elements
+class Element {
+    constructor(id, css, type) {
         this.id = id;
-        this.style = style;
-        this.fontColour = '#000';
-        this.bold = false;
+        this.css = css;
+        this.type = type
+        
+        if (type == "text" || text == "heading") {
+            this.bold = false;
+            this.italic = false;
+        }
     }
 }
 
-class Sticker {
-    constructor(id, name) {
-        this.id = id;
-        this.name = name;
-    }
-}
-
-export function createHeading(type) {
+export function createHeading(css) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
 
     // Creates elments and appends to DOM
     const element = document.createElement('div');
     element.id = newID;
-    element.classList.add(type, 'editableElement');
+    element.classList.add(css, 'editableElement');
     element.textContent = 'Heading';
     document.getElementById('userContent').appendChild(element);
 
@@ -112,11 +110,11 @@ export function createHeading(type) {
     makeDraggable(element);
     
     // Stores elements as Class
-    userElements[userElements.length] = new Heading(newID, type);
+    userElements[userElements.length] = new Element(newID, css, "text");
     console.log(userElements);
 }
 
-export function createSVG(type) {
+export function createSVG(css) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
 
@@ -124,13 +122,13 @@ export function createSVG(type) {
     const element = document.createElement('img');
     element.id = newID;
     element.classList.add('editableElement');
-    element.src = 'media/stickers/' + type + '.svg';
+    element.src = 'media/stickers/' + css + '.svg';
     document.getElementById('userContent').appendChild(element);
 
     // Adds EventListeners
     makeDraggable(element);
 
     // Stores elements as Class
-    userElements[userElements.length] = new Sticker(newID, type);
+    userElements[userElements.length] = new Element(newID, css, "sticker");
     console.log(userElements);
 }

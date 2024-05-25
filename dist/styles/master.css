@@ -516,5 +516,8 @@ path, rect, circle, ellipse {
     height: 2vh;
     z-index: 5;
     display: none;
-    background-color: red;
+    height: 2vh;
+    border-radius: 1vh;
+    background-color: #F0F0F0;
+    border: 0.25vh solid #000;
 }
