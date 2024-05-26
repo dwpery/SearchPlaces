@@ -314,23 +314,23 @@ document.getElementById('h3Btn').addEventListener('click', () => {
 });
 
 document.getElementById('eek1Btn').addEventListener('click', () => {
-    createSVG('eek1');
+    createSVG('eek1', 'sticker');
 });
 
 document.getElementById('squareBtn').addEventListener('click',() => {
-    createSVG('square');
+    createSVG('square', 'shape');
 });
 
 document.getElementById('circleBtn').addEventListener('click',() => {
-    createSVG('circle');
+    createSVG('circle', 'shape');
 });
 
 document.getElementById('triangleBtn').addEventListener('click',() => {
-    createSVG('triangle');
+    createSVG('triangle', 'shape');
 });
 
 document.getElementById('rectangleBtn').addEventListener('click',() => {
-    createSVG('rectangle');
+    createSVG('rectangle', 'shape');
 });
 
 // Opening / Closing settings

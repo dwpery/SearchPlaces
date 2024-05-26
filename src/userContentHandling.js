@@ -18,8 +18,6 @@ function generateUUID() {
     return uuid;
 }
 
-var currentPropMenu = "";
-
 // Allows text content to be changed
 function makeEditable(element) {
     // Enables element editing
@@ -64,6 +62,8 @@ function makeDraggable(element) {
                     document.getElementById('propMenu').innerHTML = 'Heading';
                 } else if (userElements[i].type == "sticker") {
                     document.getElementById('propMenu').innerHTML = 'Sticker';
+                } else if (userElements[i].type == "shape") {
+                    document.getElementById('propMenu').innerHTML = 'Shape';
                 }
             }
         }
@@ -107,6 +107,8 @@ class Element {
         if (type == "text" || type == "heading") {
             this.bold = false;
             this.italic = false;
+        } else if (type == "shape") {
+            this.fill = '#000000';
         }
     }
 }
@@ -131,7 +133,7 @@ export function createHeading(css) {
     console.log(userElements[0]);
 }
 
-export function createSVG(css) {
+export function createSVG(css, type) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
 
@@ -147,6 +149,6 @@ export function createSVG(css) {
     makeDraggable(element);
 
     // Stores elements as Class
-    userElements[userElements.length] = new Element(newID, css, "sticker");
+    userElements[userElements.length] = new Element(newID, css, type);
     console.log(userElements);
 }
