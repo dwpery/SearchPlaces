@@ -20,4 +20,16 @@
     font-size: 3vh;
 }
 
+.bold {
+    font-weight: bolder;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
 #userContent .heading1, #userContent .heading2, #userContent .heading3 { width: fit-content; }

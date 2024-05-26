@@ -514,10 +514,25 @@ path, rect, circle, ellipse {
     display: none;
     position: absolute;
     width: fit-content;
-    padding: 0.5vh;
     z-index: 5;
-    height: 2vh;
     border-radius: 1vh;
     background-color: #F0F0F0;
     border: 0.25vh solid #000;
+}
+
+.propMenuButton {
+    height: 3vh;
+    width: 3vh;
+    font-size: 2vh;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.propMenuButton:hover {
+    cursor: pointer;
+    background-color: #c0c0c0;
 }

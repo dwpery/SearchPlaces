@@ -25,9 +25,9 @@ function makeEditable(element) {
         element.contentEditable = 'true';
         element.focus();
 
-        document.getElementById('propMenu').style.top = "calc(" + element.style.top + " - 2.5vh)";
+        document.getElementById('propMenu').style.top = "calc(" + element.style.top + " - 3.25vh)";
         document.getElementById('propMenu').style.left = element.style.left;
-        document.getElementById('propMenu').style.display = 'block';
+        document.getElementById('propMenu').style.display = 'flex';
     })
 
     // Deselects element
@@ -59,7 +59,7 @@ function makeDraggable(element) {
         for (var i = 0; i <= userElements.length - 1; i++) {
             if (element.id == userElements[i].id) {
                 if (userElements[i].type == "heading") {
-                    document.getElementById('propMenu').innerHTML = 'Heading';
+                    document.getElementById('propMenu').innerHTML = '<div class="propMenuButton bold">B</div><div class="propMenuButton italic">i</div><div class="propMenuButton underline">u</div>';
                 } else if (userElements[i].type == "sticker") {
                     document.getElementById('propMenu').innerHTML = 'Sticker';
                 } else if (userElements[i].type == "shape") {
@@ -80,7 +80,7 @@ function makeDraggable(element) {
             currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
             currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";
 
-            document.getElementById('propMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 2.5vh)";
+            document.getElementById('propMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 3.25vh)";
             document.getElementById('propMenu').style.left = currentDraggableElement.style.left;
         }
     })
