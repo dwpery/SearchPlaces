@@ -33,7 +33,11 @@ function makeEditable(element) {
     // Deselects element
     element.addEventListener('blur', () => {
         element.contentEditable = 'false';
-        document.getElementById('propMenu').style.display = 'none';
+
+        // Delays hiding so buttons have time to register clicks
+        setTimeout(() => {
+            document.getElementById('propMenu').style.display = 'none';
+        }, 100);
     })
 }
 
@@ -43,6 +47,10 @@ let isDragging = false;
 let initialX, initialY;
 // Stores selected element
 let currentDraggableElement = null;
+// Stores last selected ID for propMenu btns
+var recentID = "";
+// Stores element position in UserElements[] for propMenu btns
+var posOfElement = 0;
 
 // Draggable Elements Handler
 function makeDraggable(element) {
@@ -55,11 +63,25 @@ function makeDraggable(element) {
         initialX = event.clientX - element.offsetLeft;
         initialY = event.clientY - element.offsetTop;
 
-        // Asses what element is selected and fills prop menu
+        recentID = element.id;
+
+        // Asses what element is selected and fills prop menu + functionality
         for (var i = 0; i <= userElements.length - 1; i++) {
             if (element.id == userElements[i].id) {
                 if (userElements[i].type == "heading") {
-                    document.getElementById('propMenu').innerHTML = '<div class="propMenuButton bold">B</div><div class="propMenuButton italic">i</div><div class="propMenuButton underline">u</div>';
+                    posOfElement = i;
+                    document.getElementById('propMenu').innerHTML = '<div id="propBold" class="propMenuButton bold">B</div><div class="propMenuButton italic">i</div><div class="propMenuButton underline">u</div>';
+                    
+                    // Swaps elements boldness values
+                    document.getElementById('propBold').addEventListener('click', () => {
+                        if (userElements[posOfElement].bold == false) {
+                            document.getElementById(recentID).classList.add('bold');
+                            userElements[posOfElement].bold = true;
+                        } else {
+                            document.getElementById(recentID).classList.remove('bold');
+                            userElements[posOfElement].bold = false;
+                        }
+                    });
                 } else if (userElements[i].type == "sticker") {
                     document.getElementById('propMenu').innerHTML = 'Sticker';
                 } else if (userElements[i].type == "shape") {
@@ -130,7 +152,7 @@ export function createHeading(css) {
     
     // Stores elements as Class
     userElements[userElements.length] = new Element(newID, css, "heading");
-    console.log(userElements[0]);
+    console.log(userElements);
 }
 
 export function createSVG(css, type) {
