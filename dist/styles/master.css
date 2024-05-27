@@ -461,7 +461,6 @@ path, rect, circle, ellipse {
     margin-left: 3vh;
     font-size: 5vh;
     font-weight: bold;
-    width: fit-content;
 }
 
 .setHeading:hover {
