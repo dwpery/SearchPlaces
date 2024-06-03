@@ -185,23 +185,17 @@ var bgType = false; // false = colour, true = Image
 document.getElementById('bgTypeBtn').addEventListener('click', () => {
     if (bgType == false) {
         document.getElementById('bgTypeBtn').innerHTML = '<span inert>Image</span>';
-        document.getElementById('bgColourOptions').hidden = true;
-        document.getElementById('bgImageOptions').hidden = false;
-
-        document.getElementById('userContent').classList.add('bgImage');
-        document.getElementById('userContent').classList.remove('bgColour');
-
-        bgType = true;
     } else {
         document.getElementById('bgTypeBtn').innerHTML = '<span inert>Colour</span>';
-        document.getElementById('bgColourOptions').hidden = false;
-        document.getElementById('bgImageOptions').hidden = true;
-
-        document.getElementById('userContent').classList.remove('bgImage');
-        document.getElementById('userContent').classList.add('bgColour');
-
-        bgType = false;
     }
+
+    document.getElementById('bgColourOptions').hidden = !document.getElementById('bgColourOptions').hidden;
+    document.getElementById('bgImageOptions').hidden = !document.getElementById('bgColourOptions').hidden;
+
+    document.getElementById('userContent').classList.toggle('bgImage');
+    document.getElementById('userContent').classList.toggle('bgColour');
+
+    bgType = !bgType;
 })
 
 // Changes bgColour var
@@ -280,9 +274,7 @@ function search() {
 }
 
 // Pressing SP logo will execute search()
-document.getElementById('searchIcon').addEventListener('click', () => {
-    search()
-})
+document.getElementById('searchIcon').addEventListener('click', search);
 
 // All uses for Enter key
 document.addEventListener('keydown', (event) => {
@@ -301,72 +293,39 @@ document.addEventListener('keydown', (event) => {
 
 import {createHeading, createSVG} from "./userContentHandling.js";
 
-document.getElementById('h1Btn').addEventListener('click', () => {
-    createHeading('heading1');
-});
+// Functionality to all Toolbox items
+// Text
+document.getElementById('h1Btn').addEventListener('click', () => createHeading('heading1'));
+document.getElementById('h2Btn').addEventListener('click', () => createHeading('heading2'));
+document.getElementById('h3Btn').addEventListener('click', () => createHeading('heading3'));
+//Stickers
+document.getElementById('eek1Btn').addEventListener('click', () => createSVG('eek1', 'sticker'));
+//Shapes
+document.getElementById('squareBtn').addEventListener('click',() => createSVG('square', 'shape'));
+document.getElementById('circleBtn').addEventListener('click',() => createSVG('circle', 'shape'));
+document.getElementById('triangleBtn').addEventListener('click',() => createSVG('triangle', 'shape'));
+document.getElementById('rectangleBtn').addEventListener('click',() => createSVG('rectangle', 'shape'));
 
-document.getElementById('h2Btn').addEventListener('click', () => {
-    createHeading('heading2');
-});
-
-document.getElementById('h3Btn').addEventListener('click', () => {
-    createHeading('heading3');
-});
-
-document.getElementById('eek1Btn').addEventListener('click', () => {
-    createSVG('eek1', 'sticker');
-});
-
-document.getElementById('squareBtn').addEventListener('click',() => {
-    createSVG('square', 'shape');
-});
-
-document.getElementById('circleBtn').addEventListener('click',() => {
-    createSVG('circle', 'shape');
-});
-
-document.getElementById('triangleBtn').addEventListener('click',() => {
-    createSVG('triangle', 'shape');
-});
-
-document.getElementById('rectangleBtn').addEventListener('click',() => {
-    createSVG('rectangle', 'shape');
-});
+// Settings
 
 // Opening / Closing settings
-
-document.getElementById('settingsBtn').addEventListener('click', () => {
-    document.getElementById('settings').classList.remove('sClosed');
-    document.getElementById('settings').classList.add('sOpen');
-});
-
-document.getElementById('settingsBtnClose').addEventListener('click', () => {
-    document.getElementById('settings').classList.add('sClosed');
-    document.getElementById('settings').classList.remove('sOpen');
-});
-
-// Settings containers opening
-
-function setConCollapse(name) {
-    if (document.getElementById(name).hidden == true) {
-        document.getElementById(name).hidden = false;
-        document.getElementById(name).classList.add('settingsBtnConOpen');
-        document.getElementById(name).classList.remove('settingsBtnConClosed');
-    } else {
-        document.getElementById(name).classList.add('settingsBtnConClosed');
-        document.getElementById(name).classList.remove('settingsBtnConOpen');
-        document.getElementById(name).hidden = true;
-    }
+function toggleSettings() {
+    document.getElementById('settings').classList.toggle('sClosed');
+    document.getElementById('settings').classList.toggle('sOpen');
 }
 
-document.getElementById('genSetHeader').addEventListener('click', () => {
-    setConCollapse('gsContainer');
-});
+// Adds functionality
+document.getElementById('settingsBtn').addEventListener('click', toggleSettings);
+document.getElementById('settingsBtnClose').addEventListener('click', toggleSettings);
 
-document.getElementById('custSetHeader').addEventListener('click', () => {
-    setConCollapse('csContainer');
-});
+// Toggles Settings containers
+function setConCollapse(name) {
+    document.getElementById(name).hidden = !document.getElementById(name).hidden;
+    document.getElementById(name).classList.toggle('settingsBtnConOpen');
+    document.getElementById(name).classList.toggle('settingsBtnConClosed');
+}
 
-document.getElementById('bdSetHeader').addEventListener('click', () => {
-    setConCollapse('bdsContainer');
-});
+// Adds functionality
+document.getElementById('genSetHeader').addEventListener('click', () => setConCollapse('gsContainer'));
+document.getElementById('custSetHeader').addEventListener('click', () => setConCollapse('csContainer'));
+document.getElementById('bdSetHeader').addEventListener('click', () => setConCollapse('bdsContainer'));
