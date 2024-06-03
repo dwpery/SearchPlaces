@@ -41,7 +41,7 @@ function makeEditable(element) {
     })
 }
 
-// So document event listeners know an element is being dragged
+// Document event listeners know an element is being dragged
 let isDragging = false;
 // Stores initial X + Y positions
 let initialX, initialY;
@@ -64,30 +64,31 @@ function makeDraggable(element) {
         initialY = event.clientY - element.offsetTop;
 
         recentID = element.id;
+        console.log(recentID);
 
         // Asses what element is selected and fills prop menu + functionality
-        for (var i = 0; i <= userElements.length - 1; i++) {
-            if (element.id == userElements[i].id) {
-                if (userElements[i].type == "heading") {
-                    posOfElement = i;
-                    document.getElementById('propMenu').innerHTML = '<div id="propBold" class="propMenuButton bold">B</div><div class="propMenuButton italic">i</div><div class="propMenuButton underline">u</div>';
-                    
-                    // Swaps elements boldness values
-                    document.getElementById('propBold').addEventListener('click', () => {
-                        if (userElements[posOfElement].bold == false) {
-                            document.getElementById(recentID).classList.add('bold');
-                            userElements[posOfElement].bold = true;
-                        } else {
-                            document.getElementById(recentID).classList.remove('bold');
-                            userElements[posOfElement].bold = false;
-                        }
-                    });
-                } else if (userElements[i].type == "sticker") {
-                    document.getElementById('propMenu').innerHTML = 'Sticker';
-                } else if (userElements[i].type == "shape") {
-                    document.getElementById('propMenu').innerHTML = 'Shape';
-                }
-            }
+        let selectedElement = userElements.find(element => element.id === recentID);
+
+        if (selectedElement.type == "heading") {
+            document.getElementById('propMenu').innerHTML = '<div id="propBold" class="propMenuButton bold">B</div><div id="propItalic" class="propMenuButton italic">i</div><div id="propUnderline" class="propMenuButton underline">u</div>';
+
+            // Swaps elements boldness values
+            document.getElementById('propBold').addEventListener('click', () => {
+                selectedElement.bold = !selectedElement.bold;
+                document.getElementById(recentID).classList.toggle('bold');
+            });
+
+            // Swaps elements italic values
+            document.getElementById('propItalic').addEventListener('click', () => {
+                selectedElement.italic = !selectedElement.italic;
+                document.getElementById(recentID).classList.toggle('italic');
+            });
+
+            // Swaps elements underlined values
+            document.getElementById('propUnderline').addEventListener('click', () => {
+                selectedElement.underline = !selectedElement.underline;
+                document.getElementById(recentID).classList.toggle('underline');
+            });
         }
     })
 
@@ -129,6 +130,7 @@ class Element {
         if (type == "text" || type == "heading") {
             this.bold = false;
             this.italic = false;
+            this.underline = false;
         } else if (type == "shape") {
             this.fill = '#000000';
         }
