@@ -31,15 +31,15 @@ function makeEditable(element) {
     })
 
     // Deselects element
-    element.addEventListener('blur', () => {
-        element.contentEditable = 'false';
-
-        // Delays hiding so buttons have time to register clicks
-        setTimeout(() => {
-            document.getElementById('propMenu').style.display = 'none';
-        }, 100);
-    })
+    element.addEventListener('blur', () => element.contentEditable = 'false');
 }
+
+// Hides PropMenu when non-editable element clicked
+document.addEventListener("click", (event) => {
+    if (!event.target.classList.contains("editableElement")) {
+      document.getElementById("propMenu").style.display = "none";
+    }
+});
 
 // Document event listeners know an element is being dragged
 let isDragging = false;
@@ -64,7 +64,6 @@ function makeDraggable(element) {
         initialY = event.clientY - element.offsetTop;
 
         recentID = element.id;
-        console.log(recentID);
 
         // Asses what element is selected and fills prop menu + functionality
         var selectedElement = userElements.find(element => element.id === recentID);
