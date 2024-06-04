@@ -67,7 +67,7 @@ function makeDraggable(element) {
         console.log(recentID);
 
         // Asses what element is selected and fills prop menu + functionality
-        let selectedElement = userElements.find(element => element.id === recentID);
+        var selectedElement = userElements.find(element => element.id === recentID);
 
         if (selectedElement.type == "heading") {
             document.getElementById('propMenu').innerHTML = '<div id="propBold" class="propMenuButton bold">B</div><div id="propItalic" class="propMenuButton italic">i</div><div id="propUnderline" class="propMenuButton underline">u</div>';
@@ -98,10 +98,15 @@ function makeDraggable(element) {
         var screenWidth = document.getElementById('userContent').offsetWidth;
         var screenHeight = document.getElementById('userContent').offsetHeight;
 
+        var selectedElement = userElements.find(element => element.id === recentID);
+
         // Applys position to element
         if (isDragging) {
             currentDraggableElement.style.left = (((event.clientX - initialX) / screenWidth) * 100) + "%";
             currentDraggableElement.style.top = (((event.clientY - initialY) /  screenHeight) * 100) + "%";
+
+            selectedElement.top = currentDraggableElement.style.top;
+            selectedElement.left = currentDraggableElement.style.left;
 
             document.getElementById('propMenu').style.top = "calc(" + currentDraggableElement.style.top + " - 3.25vh)";
             document.getElementById('propMenu').style.left = currentDraggableElement.style.left;
@@ -125,6 +130,10 @@ class Element {
         this.id = id;
         this.css = css;
         this.type = type;
+
+        // Position values
+        this.left = 0;
+        this.top = 0;
         
         // Exclusive to Text based Elements
         if (type == "text" || type == "heading") {
