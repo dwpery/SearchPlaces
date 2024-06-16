@@ -36,8 +36,11 @@ function makeEditable(element) {
 
 // Hides PropMenu when non-editable element clicked
 document.addEventListener("click", (event) => {
-    if (!event.target.classList.contains("editableElement")) {
+    const propMenuChild = event.target.closest('.propMenu') !== null;
+
+    if (!event.target.classList.contains("editableElement") && !propMenuChild) {
       document.getElementById("propMenu").style.display = "none";
+      console.log("fanum");
     }
 });
 
@@ -49,8 +52,7 @@ let initialX, initialY;
 let currentDraggableElement = null;
 // Stores last selected ID for propMenu btns
 var recentID = "";
-// Stores element position in UserElements[] for propMenu btns
-var posOfElement = 0;
+
 
 // Draggable Elements Handler
 function makeDraggable(element) {
@@ -88,6 +90,8 @@ function makeDraggable(element) {
                 selectedElement.underline = !selectedElement.underline;
                 document.getElementById(recentID).classList.toggle('underline');
             });
+        } else if (selectedElement.type == "shape") {
+            document.getElementById('propMenu').innerHTML = `<label class="propLabel">Size: </label><input type="text"><label class="propLabel">Rotation: </label>`;
         }
     })
 
@@ -175,7 +179,7 @@ export function createSVG(css, type) {
     element.classList.add('editableElement');
     element.src = 'media/stickers/' + css + '.svg';
     document.getElementById('userContent').appendChild(element);
-
+    
     // Adds EventListeners
     makeEditable(element);
     makeDraggable(element);
