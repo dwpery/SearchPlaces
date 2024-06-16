@@ -535,3 +535,13 @@ path, rect, circle, ellipse {
     cursor: pointer;
     background-color: #c0c0c0;
 }
+
+.propLabel {
+    font-size: 1.5vh;
+    padding: 0.5vh;
+}
+
+.propInput {
+    outline: none;
+    width: 4vh;
+}

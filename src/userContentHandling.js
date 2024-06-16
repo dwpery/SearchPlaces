@@ -34,11 +34,9 @@ function makeEditable(element) {
     element.addEventListener('blur', () => element.contentEditable = 'false');
 }
 
-// Hides PropMenu when non-editable element clicked
+// Hides PropMenu when non-editable or non-propmenu element clicked
 document.addEventListener("click", (event) => {
-    const propMenuChild = event.target.closest('.propMenu') !== null;
-
-    if (!event.target.classList.contains("editableElement") && !propMenuChild) {
+    if (!event.target.classList.contains("editableElement") && event.target.closest('.propMenu') == null) {
       document.getElementById("propMenu").style.display = "none";
       console.log("fanum");
     }
@@ -91,7 +89,7 @@ function makeDraggable(element) {
                 document.getElementById(recentID).classList.toggle('underline');
             });
         } else if (selectedElement.type == "shape") {
-            document.getElementById('propMenu').innerHTML = `<label class="propLabel">Size: </label><input type="text"><label class="propLabel">Rotation: </label>`;
+            document.getElementById('propMenu').innerHTML = `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" type="text"><label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" type="text">`;
         }
     })
 
