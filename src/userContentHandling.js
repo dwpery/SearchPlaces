@@ -89,7 +89,11 @@ function makeDraggable(element) {
                 document.getElementById(recentID).classList.toggle('underline');
             });
         } else if (selectedElement.type == "shape") {
-            document.getElementById('propMenu').innerHTML = `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" type="text"><label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" type="text">`;
+            // Write out PropMenu content
+            document.getElementById('propMenu').innerHTML = `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="1.0" step="0.1" min="0.1" type="number"><label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="0" min="-360" max="360" type="number">`;
+            // Updates Rotation and Size properties
+            document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
+            document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
         }
     })
 
@@ -121,6 +125,12 @@ function makeDraggable(element) {
     })
 }
 
+function updateShape(selectedElement, recentID) {
+    selectedElement.rotation = document.getElementById('rotationInput').value;
+    selectedElement.size = document.getElementById('sizeInput').value;
+    document.getElementById(recentID).style.transform = 'rotate(' + selectedElement.rotation + 'deg) scale(' + selectedElement.size + ')';
+}
+
 // Stores Classes for User Generated content
 var userElements = [];
 
@@ -143,6 +153,8 @@ class Element {
             this.underline = false;
         } else if (type == "shape") {
             this.fill = '#000000';
+            this.rotation = 0;
+            this.size = 1;
         }
     }
 }
