@@ -38,7 +38,6 @@ function makeEditable(element) {
 document.addEventListener("click", (event) => {
     if (!event.target.classList.contains("editableElement") && event.target.closest('.propMenu') == null) {
       document.getElementById("propMenu").style.display = "none";
-      console.log("fanum");
     }
 });
 
@@ -69,7 +68,7 @@ function makeDraggable(element) {
         var selectedElement = userElements.find(element => element.id === recentID);
 
         if (selectedElement.type == "heading") {
-            document.getElementById('propMenu').innerHTML = '<div id="propBold" class="propMenuButton bold">B</div><div id="propItalic" class="propMenuButton italic">i</div><div id="propUnderline" class="propMenuButton underline">u</div>';
+            document.getElementById('propMenu').innerHTML = '<img class="propMenuButton" src="media/icons/bin.svg"><div id="propBold" class="propMenuButton bold">B</div><div id="propItalic" class="propMenuButton italic">i</div><div id="propUnderline" class="propMenuButton underline">u</div>';
 
             // Swaps elements boldness values
             document.getElementById('propBold').addEventListener('click', () => {
@@ -90,7 +89,7 @@ function makeDraggable(element) {
             });
         } else if (selectedElement.type == "shape") {
             // Write out PropMenu content
-            document.getElementById('propMenu').innerHTML = `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="1.0" step="0.1" min="0.1" type="number"><label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="0" min="-360" max="360" type="number">`;
+            document.getElementById('propMenu').innerHTML = `<img class="propMenuButton" src="media/icons/bin.svg"><label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="1.0" step="0.1" min="0.1" type="number"><label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="0" min="-360" max="360" type="number">`;
             // Updates Rotation and Size properties
             document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
             document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
