@@ -50,6 +50,14 @@ let currentDraggableElement = null;
 // Stores last selected ID for propMenu btns
 var recentID = "";
 
+// Prop menu parts
+const binButton = `<img class="propMenuButton" src="media/icons/bin.svg">`;
+const boldButton = `<div id="propBold" class="propMenuButton bold">B</div>`;
+const italicButton = `<div id="propItalic" class="propMenuButton italic">i</div>`;
+const underlineButton = `<div id="propUnderline" class="propMenuButton underline">u</div>`;
+const sizeInput = `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="1.0" step="0.1" min="0.1" type="number">`;
+const rotationInput = `<label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="0" min="-360" max="360" type="number">`;
+
 
 // Draggable Elements Handler
 function makeDraggable(element) {
@@ -68,7 +76,7 @@ function makeDraggable(element) {
         var selectedElement = userElements.find(element => element.id === recentID);
 
         if (selectedElement.type == "heading") {
-            document.getElementById('propMenu').innerHTML = '<img class="propMenuButton" src="media/icons/bin.svg"><div id="propBold" class="propMenuButton bold">B</div><div id="propItalic" class="propMenuButton italic">i</div><div id="propUnderline" class="propMenuButton underline">u</div>';
+            document.getElementById('propMenu').innerHTML = binButton + boldButton + italicButton + underlineButton + sizeInput + rotationInput;
 
             // Swaps elements boldness values
             document.getElementById('propBold').addEventListener('click', () => {
@@ -87,9 +95,12 @@ function makeDraggable(element) {
                 selectedElement.underline = !selectedElement.underline;
                 document.getElementById(recentID).classList.toggle('underline');
             });
+            // Updates Rotation and Size properties
+            document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
+            document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
         } else if (selectedElement.type == "shape") {
             // Write out PropMenu content
-            document.getElementById('propMenu').innerHTML = `<img class="propMenuButton" src="media/icons/bin.svg"><label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="1.0" step="0.1" min="0.1" type="number"><label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="0" min="-360" max="360" type="number">`;
+            document.getElementById('propMenu').innerHTML = binButton + sizeInput + rotationInput;
             // Updates Rotation and Size properties
             document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
             document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
