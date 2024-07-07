@@ -531,7 +531,7 @@ path, rect, circle, ellipse {
     transition: 0.5s;
 }
 
-.propMenuButton:hover {
+.propMenuButton:hover, .buttonSelected {
     cursor: pointer;
     background-color: #c0c0c0;
 }

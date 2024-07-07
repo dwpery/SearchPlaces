@@ -41,6 +41,45 @@ document.addEventListener("click", (event) => {
     }
 });
 
+// Prop menu parts
+function binBtn() {
+    document.getElementById('propMenu').innerHTML += `<img class="propMenuButton" src="media/icons/bin.svg">`;
+}
+
+function textBtns(selectedElement, recentID) {
+    document.getElementById('propMenu').innerHTML += `<div id="propBold" class="propMenuButton bold ` + (selectedElement.bold ? 'buttonSelected' : '') + `">B</div>
+        <div id="propItalic" class="propMenuButton italic ` + (selectedElement.iatlic ? 'buttonSelected' : '') + `">i</div>
+        <div id="propUnderline" class="propMenuButton underline ` + (selectedElement.underline ? 'buttonSelected' : '') + `">u</div>`;
+    
+    // Swaps elements boldness values
+    document.getElementById('propBold').addEventListener('click', () => {
+        selectedElement.bold = !selectedElement.bold;
+        document.getElementById(recentID).classList.toggle('bold');
+    });
+
+    // Swaps elements italic values
+    document.getElementById('propItalic').addEventListener('click', () => {
+        alert('skibidi')
+        selectedElement.italic = !selectedElement.italic;
+        document.getElementById(recentID).classList.toggle('italic');
+    });
+
+    // Swaps elements underlined values
+    document.getElementById('propUnderline').addEventListener('click', () => {
+        selectedElement.underline = !selectedElement.underline;
+        document.getElementById(recentID).classList.toggle('underline');
+    });
+}
+
+function sizeAndRotationBtns(selectedElement, recentID) {
+    document.getElementById('propMenu').innerHTML += `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="` + Number(selectedElement.size) + `" step="0.1" min="0.1" type="number">
+        <label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="` + Number(selectedElement.rotation) + `" min="-360" max="360" type="number">`;
+
+    // Updates Rotation and Size properties
+    document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
+    document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
+}
+
 // Document event listeners know an element is being dragged
 let isDragging = false;
 // Stores initial X + Y positions
@@ -49,15 +88,6 @@ let initialX, initialY;
 let currentDraggableElement = null;
 // Stores last selected ID for propMenu btns
 var recentID = "";
-
-// Prop menu parts
-const binButton = `<img class="propMenuButton" src="media/icons/bin.svg">`;
-const boldButton = `<div id="propBold" class="propMenuButton bold">B</div>`;
-const italicButton = `<div id="propItalic" class="propMenuButton italic">i</div>`;
-const underlineButton = `<div id="propUnderline" class="propMenuButton underline">u</div>`;
-const sizeInput = `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="1.0" step="0.1" min="0.1" type="number">`;
-const rotationInput = `<label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="0" min="-360" max="360" type="number">`;
-
 
 // Draggable Elements Handler
 function makeDraggable(element) {
@@ -76,34 +106,15 @@ function makeDraggable(element) {
         var selectedElement = userElements.find(element => element.id === recentID);
 
         if (selectedElement.type == "heading") {
-            document.getElementById('propMenu').innerHTML = binButton + boldButton + italicButton + underlineButton + sizeInput + rotationInput;
+            document.getElementById('propMenu').innerHTML = '';
+            binBtn(selectedElement, recentID);
+            textBtns(selectedElement, recentID);
+            //sizeAndRotationBtns(selectedElement, recentID);
 
-            // Swaps elements boldness values
-            document.getElementById('propBold').addEventListener('click', () => {
-                selectedElement.bold = !selectedElement.bold;
-                document.getElementById(recentID).classList.toggle('bold');
-            });
-
-            // Swaps elements italic values
-            document.getElementById('propItalic').addEventListener('click', () => {
-                selectedElement.italic = !selectedElement.italic;
-                document.getElementById(recentID).classList.toggle('italic');
-            });
-
-            // Swaps elements underlined values
-            document.getElementById('propUnderline').addEventListener('click', () => {
-                selectedElement.underline = !selectedElement.underline;
-                document.getElementById(recentID).classList.toggle('underline');
-            });
-            // Updates Rotation and Size properties
-            document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
-            document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
         } else if (selectedElement.type == "shape") {
             // Write out PropMenu content
-            document.getElementById('propMenu').innerHTML = binButton + sizeInput + rotationInput;
-            // Updates Rotation and Size properties
-            document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
-            document.getElementById('sizeInput').addEventListener('input', () => updateShape(selectedElement, recentID));
+            document.getElementById('propMenu').innerHTML = '';
+            sizeAndRotationBtns(selectedElement, recentID);
         }
     })
 
@@ -155,6 +166,8 @@ class Element {
         // Position values
         this.left = 0;
         this.top = 0;
+        this.rotation = 0;
+        this.size = 1.0;
         
         // Exclusive to Text based Elements
         if (type == "text" || type == "heading") {
@@ -163,8 +176,6 @@ class Element {
             this.underline = false;
         } else if (type == "shape") {
             this.fill = '#000000';
-            this.rotation = 0;
-            this.size = 1;
         }
     }
 }
