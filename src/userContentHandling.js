@@ -47,33 +47,35 @@ function binBtn() {
 }
 
 function textBtns(selectedElement, recentID) {
-    document.getElementById('propMenu').innerHTML += `<div id="propBold" class="propMenuButton bold ` + (selectedElement.bold ? 'buttonSelected' : '') + `">B</div>
-        <div id="propItalic" class="propMenuButton italic ` + (selectedElement.iatlic ? 'buttonSelected' : '') + `">i</div>
-        <div id="propUnderline" class="propMenuButton underline ` + (selectedElement.underline ? 'buttonSelected' : '') + `">u</div>`;
+    document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<div id="propBold" class="propMenuButton bold ` + (selectedElement.bold ? 'buttonSelected' : '') + `">B</div>
+        <div id="propItalic" class="propMenuButton italic ` + (selectedElement.italic ? 'buttonSelected' : '') + `">i</div>
+        <div id="propUnderline" class="propMenuButton underline ` + (selectedElement.underline ? 'buttonSelected' : '') + `">u</div>`);
     
     // Swaps elements boldness values
     document.getElementById('propBold').addEventListener('click', () => {
         selectedElement.bold = !selectedElement.bold;
         document.getElementById(recentID).classList.toggle('bold');
+        document.getElementById('propBold').classList.toggle('buttonSelected');
     });
 
     // Swaps elements italic values
     document.getElementById('propItalic').addEventListener('click', () => {
-        alert('skibidi')
         selectedElement.italic = !selectedElement.italic;
         document.getElementById(recentID).classList.toggle('italic');
+        document.getElementById('propItalic').classList.toggle('buttonSelected');
     });
 
     // Swaps elements underlined values
     document.getElementById('propUnderline').addEventListener('click', () => {
         selectedElement.underline = !selectedElement.underline;
         document.getElementById(recentID).classList.toggle('underline');
+        document.getElementById('propUnderline').classList.toggle('buttonSelected');
     });
 }
 
 function sizeAndRotationBtns(selectedElement, recentID) {
-    document.getElementById('propMenu').innerHTML += `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="` + Number(selectedElement.size) + `" step="0.1" min="0.1" type="number">
-        <label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="` + Number(selectedElement.rotation) + `" min="-360" max="360" type="number">`;
+    document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="` + Number(selectedElement.size) + `" step="0.1" min="0.1" type="number">
+        <label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="` + Number(selectedElement.rotation) + `" min="-360" max="360" type="number">`);
 
     // Updates Rotation and Size properties
     document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
@@ -109,7 +111,7 @@ function makeDraggable(element) {
             document.getElementById('propMenu').innerHTML = '';
             binBtn(selectedElement, recentID);
             textBtns(selectedElement, recentID);
-            //sizeAndRotationBtns(selectedElement, recentID);
+            sizeAndRotationBtns(selectedElement, recentID);
 
         } else if (selectedElement.type == "shape") {
             // Write out PropMenu content
