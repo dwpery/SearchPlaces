@@ -224,7 +224,7 @@ const searchEngineButtons = [
 // Value repressenting link in 'searchLinks' array
 var searchEngine = 0;
 
-// Updates elected SE
+// Updates selected SearchEngine
 function updateSearchEngine(button) {
     // Updates text of button and variable to new SE chosen
     document.getElementById('searchEngineBtn').innerHTML = `<span inert>${button.name}</span>`;

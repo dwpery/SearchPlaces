@@ -75,7 +75,7 @@ function textBtns(selectedElement, recentID) {
 
 function sizeAndRotationBtns(selectedElement, recentID) {
     document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="` + Number(selectedElement.size) + `" step="0.1" min="0.1" type="number">
-        <label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="` + Number(selectedElement.rotation) + `" min="-360" max="360" type="number">`);
+        <label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="` + Number(selectedElement.rotation) + `" min="-360" max="360" step="5" type="number">`);
 
     // Updates Rotation and Size properties
     document.getElementById('rotationInput').addEventListener('input', () => updateShape(selectedElement, recentID));
@@ -106,16 +106,17 @@ function makeDraggable(element) {
 
         // Asses what element is selected and fills prop menu + functionality
         var selectedElement = userElements.find(element => element.id === recentID);
+        document.getElementById('propMenu').innerHTML = '';
+        binBtn(selectedElement, recentID);
 
+        // Fills PropMenu Btns when different elements are selected 
         if (selectedElement.type == "heading") {
-            document.getElementById('propMenu').innerHTML = '';
-            binBtn(selectedElement, recentID);
             textBtns(selectedElement, recentID);
             sizeAndRotationBtns(selectedElement, recentID);
 
         } else if (selectedElement.type == "shape") {
-            // Write out PropMenu content
-            document.getElementById('propMenu').innerHTML = '';
+            sizeAndRotationBtns(selectedElement, recentID);
+        } else if (selectedElement.type == "sticker") {
             sizeAndRotationBtns(selectedElement, recentID);
         }
     })
