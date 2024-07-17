@@ -529,6 +529,7 @@ path, rect, circle, ellipse {
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+    margin-right: 0.5vh;
 }
 
 .propMenuButton:hover, .buttonSelected {
