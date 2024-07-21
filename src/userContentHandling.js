@@ -34,18 +34,30 @@ function makeEditable(element) {
     element.addEventListener('blur', () => element.contentEditable = 'false');
 }
 
-// Hides PropMenu when non-editable or non-propmenu element clicked
+// Hides PropMenu when non-editable OR non-propmenu element clicked
 document.addEventListener("click", (event) => {
     if (!event.target.classList.contains("editableElement") && event.target.closest('.propMenu') == null) {
       document.getElementById("propMenu").style.display = "none";
     }
 });
 
-// Prop menu parts
-function binBtn() {
-    document.getElementById('propMenu').innerHTML += `<img class="propMenuButton" src="media/icons/bin.svg">`;
+// Functions to populate PropMenu when diff elements clicked
+
+// Delete Element btn + EventListeners
+function binBtn(selectedElement) {
+    document.getElementById('propMenu').innerHTML += `<img id="delElementBtn" class="propMenuButton" src="media/icons/bin.svg">`;
+    
+    document.getElementById('delElementBtn').addEventListener('click', () => {
+        // Removes element from DOM + hides PropMenu
+        document.getElementById(selectedElement.id).parentNode.removeChild(document.getElementById(selectedElement.id));
+        document.getElementById("propMenu").style.display = "none";
+        // Removes element from backend
+        const deletedElement = userElements.indexOf(selectedElement);
+        userElements.splice(deletedElement, 1);
+    })
 }
 
+// Text Manipulation btns + EventListeners
 function textBtns(selectedElement, recentID) {
     document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<div id="propBold" class="propMenuButton bold ` + (selectedElement.bold ? 'buttonSelected' : '') + `">B</div>
         <div id="propItalic" class="propMenuButton italic ` + (selectedElement.italic ? 'buttonSelected' : '') + `">i</div>
@@ -73,6 +85,7 @@ function textBtns(selectedElement, recentID) {
     });
 }
 
+// Size and rotation btns + EventListeners
 function sizeAndRotationBtns(selectedElement, recentID) {
     document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<label class="propLabel">Size: </label><input id="sizeInput" class="propInput" value="` + Number(selectedElement.size) + `" step="0.1" min="0.1" type="number">
         <label class="propLabel">Rotation: </label><input id="rotationInput" class="propInput" value="` + Number(selectedElement.rotation) + `" min="-360" max="360" step="5" type="number">`);
@@ -107,7 +120,7 @@ function makeDraggable(element) {
         // Asses what element is selected and fills prop menu + functionality
         var selectedElement = userElements.find(element => element.id === recentID);
         document.getElementById('propMenu').innerHTML = '';
-        binBtn(selectedElement, recentID);
+        binBtn(selectedElement);
 
         // Fills PropMenu Btns when different elements are selected 
         if (selectedElement.type == "heading") {
