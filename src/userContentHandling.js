@@ -20,21 +20,20 @@ function generateUUID() {
 
 // Allows text content to be changed
 function makeEditable(element) {
-    // Enables element editing
     element.addEventListener('click', () => {
+        // Enables element editing
         element.contentEditable = 'true';
         element.focus();
-
+        // Positions PropMenu
         document.getElementById('propMenu').style.top = "calc(" + element.style.top + " - 3.25vh)";
         document.getElementById('propMenu').style.left = element.style.left;
         document.getElementById('propMenu').style.display = 'flex';
     })
-
     // Deselects element
     element.addEventListener('blur', () => element.contentEditable = 'false');
 }
 
-// Hides PropMenu when non-editable OR non-propmenu element clicked
+// Hides PropMenu when non-editable OR non-PropMenu element clicked
 document.addEventListener("click", (event) => {
     if (!event.target.classList.contains("editableElement") && event.target.closest('.propMenu') == null) {
       document.getElementById("propMenu").style.display = "none";
@@ -101,7 +100,7 @@ let isDragging = false;
 let initialX, initialY;
 // Stores selected element
 let currentDraggableElement = null;
-// Stores last selected ID for propMenu btns
+// Stores last selected ID for PropMenu btns
 var recentID = "";
 
 // Draggable Elements Handler
@@ -185,7 +184,7 @@ class Element {
         this.rotation = 0;
         this.size = 1.0;
         
-        // Exclusive to Text based Elements
+        // Handles attributes exclusive to diff elements
         if (type == "text" || type == "heading") {
             this.bold = false;
             this.italic = false;

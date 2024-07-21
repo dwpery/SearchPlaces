@@ -147,27 +147,21 @@ document.getElementById('zoomOut').addEventListener('click', () => {
     }
 });
 
-// Toolbox opening
-document.getElementById('toolboxBtn').addEventListener('click', () => {
-    document.getElementById("toolbox").classList.add("openSideMenu");
-    document.getElementById("properties").classList.remove("openSideMenu");
-})
+// Toolbox opening / closing
+document.querySelectorAll('.toolboxBtn, svg.toolboxBtn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.getElementById("toolbox").classList.toggle("openSideMenu");
+        document.getElementById("properties").classList.remove("openSideMenu");
+    });
+});
 
-// Toolbox closing
-document.getElementById('closeToolbox').addEventListener('click', () => {
-    document.getElementById("toolbox").classList.remove("openSideMenu");
-})
-
-// Properties opening
-document.getElementById('propertiesBtn').addEventListener('click', () => {
-    document.getElementById("properties").classList.add("openSideMenu");
-    document.getElementById("toolbox").classList.remove("openSideMenu");
-})
-
-// Properties closing
-document.getElementById('closeProperties').addEventListener('click', () => {
-    document.getElementById("properties").classList.remove("openSideMenu");
-})
+// Properties opening / closing
+document.querySelectorAll('.propertiesBtn, svg.propertiesBtn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.getElementById("properties").classList.toggle("openSideMenu");
+        document.getElementById("toolbox").classList.remove("openSideMenu");
+    });
+});
 
 // Hide Editor UI
 document.getElementById('hideUiBtn').addEventListener('click', () => {
