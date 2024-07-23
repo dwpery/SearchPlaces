@@ -310,26 +310,20 @@ document.getElementById('circleBtn').addEventListener('click',() => createSVG('c
 document.getElementById('triangleBtn').addEventListener('click',() => createSVG('triangle', 'shape'));
 document.getElementById('rectangleBtn').addEventListener('click',() => createSVG('rectangle', 'shape'));
 
-// Settings
+// -- Settings --
 
-// Opening / Closing settings
-function toggleSettings() {
-    document.getElementById('settings').classList.toggle('sClosed');
-    document.getElementById('settings').classList.toggle('sOpen');
-}
+// Settings Opening / Closing functionality
+document.querySelectorAll('.settingsBtn, svg.settingsBtn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.getElementById('settings').classList.toggle('sClosed');
+        document.getElementById('settings').classList.toggle('sOpen');
+    });
+});
 
-// Adds functionality
-document.getElementById('settingsBtn').addEventListener('click', toggleSettings);
-document.getElementById('settingsBtnClose').addEventListener('click', toggleSettings);
-
-// Toggles Settings containers
-function setConCollapse(name) {
-    document.getElementById(name).hidden = !document.getElementById(name).hidden;
-    document.getElementById(name).classList.toggle('settingsBtnConOpen');
-    document.getElementById(name).classList.toggle('settingsBtnConClosed');
-}
-
-// Adds functionality
+// Adds functions to Settings Sub-Header buttons
 document.getElementById('genSetHeader').addEventListener('click', () => setConCollapse('gsContainer'));
 document.getElementById('custSetHeader').addEventListener('click', () => setConCollapse('csContainer'));
 document.getElementById('bdSetHeader').addEventListener('click', () => setConCollapse('bdsContainer'));
+
+// Toggles Settings sub-containers
+function setConCollapse(name) { document.getElementById(name).hidden = !document.getElementById(name).hidden; }

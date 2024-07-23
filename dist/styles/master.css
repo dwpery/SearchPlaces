@@ -502,14 +502,6 @@ path, rect, circle, ellipse {
     transition: 0.5s;
 }
 
-.settingsBtnConClosed {
-    opacity: 0;
-}
-
-.settingsBtnConOpen {
-    opacity: 1;
-}
-
 .propMenu {
     display: none;
     position: absolute;
