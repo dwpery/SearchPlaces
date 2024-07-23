@@ -147,6 +147,8 @@ document.getElementById('zoomOut').addEventListener('click', () => {
     }
 });
 
+// --- Left Side Tools --- 
+
 // Toolbox opening / closing
 document.querySelectorAll('.toolboxBtn, svg.toolboxBtn').forEach(button => {
     button.addEventListener('click', () => {
@@ -154,6 +156,14 @@ document.querySelectorAll('.toolboxBtn, svg.toolboxBtn').forEach(button => {
         document.getElementById("properties").classList.remove("openSideMenu");
     });
 });
+
+// Hand Tool Btn
+document.getElementById('handBtn').addEventListener('click', () => {
+    document.getElementById('handBtn').classList.toggle('buttonSelected');
+    document.getElementById('userContent').classList.toggle('grabbable');
+    
+    //toggleViewportDragging();
+})
 
 // Properties opening / closing
 document.querySelectorAll('.propertiesBtn, svg.propertiesBtn').forEach(button => {

@@ -4,7 +4,7 @@
     border-radius: 2vh;
 }
 
-.editableElement:hover {
+.grabbable:hover {
     cursor: grab;
 }
 

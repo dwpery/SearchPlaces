@@ -202,7 +202,7 @@ export function createHeading(css) {
     // Creates elment and appends to DOM
     const element = document.createElement('div');
     element.id = newID;
-    element.classList.add(css, 'editableElement');
+    element.classList.add(css, 'editableElement', 'grabbable');
     element.textContent = 'Heading';
     document.getElementById('userContent').appendChild(element);
 
@@ -222,7 +222,7 @@ export function createSVG(css, type) {
     // Creates elment and appends to DOM
     const element = document.createElement('img');
     element.id = newID;
-    element.classList.add('editableElement');
+    element.classList.add(css, 'editableElement', 'grabbable');
     element.src = 'media/stickers/' + css + '.svg';
     document.getElementById('userContent').appendChild(element);
     
