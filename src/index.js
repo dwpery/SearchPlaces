@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, getRedirectResult, GithubAuthProvider, signOut  } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, signOut  } from 'firebase/auth';
 
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDndU1jJYP9rb87J0UixYbpzn6MpvXOLms",
@@ -14,40 +14,35 @@ const firebaseApp = initializeApp({
 
 const analytics = getAnalytics(firebaseApp);
 
+// -- Authentication Code --
+
+// Firebase Auth object
 const auth = getAuth(firebaseApp);
-const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
 
-document.getElementById('googleAuth').addEventListener('click', () => {
-    signInWithRedirect(auth, googleProvider)
-});
+// Functionality to oAuth icons
+document.getElementById('googleAuth').addEventListener('click', async () => popupAuthLogin(auth, new GoogleAuthProvider()));
+document.getElementById('githubAuth').addEventListener('click', async () => popupAuthLogin(auth, new GithubAuthProvider()));
 
-document.getElementById('githubAuth').addEventListener('click', () => {
-    signInWithRedirect(auth, githubProvider)
-});
+// Popup function for oAuth
+function popupAuthLogin(auth, provider) {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = provider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // User info.
+            const user = result.user;
+        }).catch ((error) => {
+            console.log(error.code + " " + error.message);
+        });
+}
 
+// Sign out 
 document.getElementById('userIcon').addEventListener('click', () => {
     signOut(auth);
 });
 
-getRedirectResult(auth)
-    .then((result) => {
-        // This gives you a Google Access Token. You can use it to access Google APIs.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-
-        // The signed-in user info.
-        const user = result.user;
-        console.log(user);
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        console.log(errorCode + " " + errorMessage);
-})
-
 // Detects auth state change
-
 onAuthStateChanged(auth, user => {
     document.getElementById('loader').hidden = true;
     document.getElementById('loader').style.display = 'none';
@@ -123,7 +118,7 @@ function resetAuthPage() {
     }
 }
 
-// Zoom Code
+// -- Zoom Code --
 
 var zoom = 1;
 
@@ -182,7 +177,7 @@ document.getElementById('hideUiBtn').addEventListener('click', () => {
     }, 500);
 })
 
-// Properties buttons
+// -- Properties buttons --
 
 var bgType = false; // false = colour, true = Image
 
@@ -206,8 +201,6 @@ document.getElementById('bgTypeBtn').addEventListener('click', () => {
 document.getElementById('bgColourSelector').addEventListener('input', () => {
     document.documentElement.style.setProperty('--bgColour', document.getElementById('bgColourSelector').value);
 })
-
-// Search Functions
 
 // Shows multi-option picker with SEs
 document.getElementById('searchEngineBtn').addEventListener('click', () => {
@@ -258,6 +251,8 @@ document.getElementById('searchDestinationBtn').addEventListener('click', () => 
     }
 })
 
+// -- Search Functions --
+
 // Stores all SE query links
 var searchLinks = new Array('https://www.google.com/search?q=', 'https://www.bing.com/search?q=', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/&q=', 'https://www.ecosia.org/search?q=', 'https://www.startpage.com/sp/search?q=');
 // Joins search link and query
@@ -266,7 +261,7 @@ var searchQuery = "";
 function search() {
     // Ensures box isn't empty
     if (document.getElementById('searchBox').value != "") {
-        // Buils link + query and spaces replaced by '+'
+        // Builds link + query and spaces replaced by '+'
         searchQuery = searchLinks[searchEngine] + document.getElementById('searchBox').value.replace(/\s/g, "+");
         // Directs user to their selected destination
         if (searchDestination == false) {
@@ -293,11 +288,10 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
-// User Content Creation
+// -- Toolbox --
 
 import {createHeading, createSVG} from "./userContentHandling.js";
 
-// Functionality to all Toolbox items
 // Text
 document.getElementById('h1Btn').addEventListener('click', () => createHeading('heading1'));
 document.getElementById('h2Btn').addEventListener('click', () => createHeading('heading2'));
