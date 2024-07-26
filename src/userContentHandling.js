@@ -215,6 +215,14 @@ export function createHeading(css) {
     console.log(userElements);
 }
 
+/*
+const shapeSvgPaths = [
+    { name: 'circle', path: '<circle cx="50" cy="50" r="40" fill="black"/>' },
+    { name: 'rectangle', path: '<rect x="25" y="10" width="50" height="80" fill="black"/>' },
+    { name: 'square', path: '<rect x="10" y="10" width="80" height="80" fill="black"/>' }
+];
+*/
+
 export function createSVG(css, type) {
     // Generates unique ID used to refer to user created elements
     const newID = generateBase64Id();
