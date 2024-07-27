@@ -177,7 +177,6 @@ class Element {
         this.id = id;
         this.css = css;
         this.type = type;
-
         // Position values
         this.left = 0;
         this.top = 0;
