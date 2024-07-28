@@ -15,12 +15,6 @@ body {
     overflow: hidden;
 }
 
-#app {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
 #userContent {
     position: absolute;
     width: 100%;
@@ -38,14 +32,25 @@ body {
     background-size: cover;
 }
 
+.border {
+    border: 0.25vh solid #000;
+}
+
+.centerInside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
 #leftSideTools {
     position: absolute;
     z-index: 2;
     transition: 0.5s;
-}
-
-.lstShow {
-    opacity: 1;
 }
 
 .lstHide {
@@ -60,16 +65,10 @@ body {
     width: 6vh;
     border-radius: 50%;
     background-color: #000;
-    border: 0.25vh solid #000;
     transition: 0.5s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .userIcon:hover {
-    cursor: pointer;
     border-color: var(--themeColour);
     background-color: var(--themeColour);
 }
@@ -83,7 +82,6 @@ body {
 }
 
 .menuBtnHover:hover {
-    cursor: pointer;
     background-color: #c0c0c0;
 }
 
@@ -113,10 +111,6 @@ path, rect, circle, ellipse {
 .zoomButton {
     height: 6vh;
     width: 6vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transition: 0.5s;
 }
 
@@ -147,10 +141,6 @@ path, rect, circle, ellipse {
 .mainButton {
     height: 6vh;
     width: 6vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transition: 0.5s;
 }
 
@@ -196,10 +186,6 @@ path, rect, circle, ellipse {
 
 #searchIcon {
     height: 4vh;
-}
-
-#searchIcon:hover {
-    cursor: pointer;
 }
 
 .searchDecor {
@@ -267,7 +253,6 @@ path, rect, circle, ellipse {
 
 .submenuHeaderBtn:hover, .settingsHeaderImg:hover rect {
     fill: var(--themeColour);
-    cursor: pointer;
 }
 
 .submenuSubheading {
@@ -284,13 +269,9 @@ path, rect, circle, ellipse {
     text-indent: 1vh;
     padding: 0.5vh;
     transition: 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .submenuBtn:hover {
-    cursor: pointer;
     background-color: #c0c0c0;
 }
 
@@ -326,7 +307,6 @@ path, rect, circle, ellipse {
 }
 
 .optionBtn:hover {
-    cursor: pointer;
     background-color: var(--themeColour);
 }
 
@@ -347,7 +327,6 @@ path, rect, circle, ellipse {
 }
 
 .multiOptionItem:hover {
-    cursor: pointer;
     background-color: var(--themeColour);
 }
 
@@ -372,7 +351,6 @@ path, rect, circle, ellipse {
 }
 
 #bgColourSelector:hover {
-    cursor: pointer;
     border-color: var(--themeColour);
 }
 
@@ -404,7 +382,6 @@ path, rect, circle, ellipse {
 }
 
 .gridItem:hover {
-    cursor: pointer;
     background-color: #c0c0c0;
 }
 
@@ -453,19 +430,11 @@ path, rect, circle, ellipse {
     width: 7vh;
 }
 
-.settingsHeaderImg:hover {
-    cursor: pointer;
-}
-
 .setHeading {
     margin-top: 2vh;
     margin-left: 3vh;
     font-size: 5vh;
     font-weight: bold;
-}
-
-.setHeading:hover {
-    cursor: pointer;
 }
 
 .settingBtnContainer {
@@ -494,7 +463,6 @@ path, rect, circle, ellipse {
 }
 
 .settingBtn:hover {
-    cursor: pointer;
     background-color: var(--themeColour);
 }
 
@@ -506,7 +474,7 @@ path, rect, circle, ellipse {
     display: none;
     position: absolute;
     width: fit-content;
-    z-index: 5;
+    z-index: 1;
     border-radius: 1vh;
     background-color: #F0F0F0;
     border: 0.25vh solid #000;
@@ -517,16 +485,11 @@ path, rect, circle, ellipse {
     width: 3vh;
     font-size: 2vh;
     border-radius: 1vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transition: 0.5s;
     margin-right: 0.5vh;
 }
 
 .propMenuButton:hover, .buttonSelected {
-    cursor: pointer;
     background-color: #c0c0c0;
     border-radius: 0;
 }
@@ -539,4 +502,30 @@ path, rect, circle, ellipse {
 .propInput {
     outline: none;
     width: 4vh;
+}
+
+#mediaMenu {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30vh;
+    width: 60vh;
+    background-color: #F0F0F0;
+    border: 0.25vh solid #000;
+    z-index: 20;
+    border-radius: 2vh;
+    display: none;
+}
+
+.mediaInpContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1vh;
+}
+
+.linkInp {
+    font-size: 2vh;
+    border: 0.25vh solid #000;
+    border-radius: 2vh;
 }

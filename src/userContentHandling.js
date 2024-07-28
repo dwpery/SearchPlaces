@@ -44,7 +44,7 @@ document.addEventListener("click", (event) => {
 
 // Delete Element btn + EventListeners
 function binBtn(selectedElement) {
-    document.getElementById('propMenu').innerHTML += `<img id="delElementBtn" class="propMenuButton" src="media/icons/bin.svg">`;
+    document.getElementById('propMenu').innerHTML += `<img id="delElementBtn" class="propMenuButton hover centerInside" src="media/icons/bin.svg">`;
     
     document.getElementById('delElementBtn').addEventListener('click', () => {
         // Removes element from DOM + hides PropMenu
@@ -58,9 +58,9 @@ function binBtn(selectedElement) {
 
 // Text Manipulation btns + EventListeners
 function textBtns(selectedElement, recentID) {
-    document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<div id="propBold" class="propMenuButton bold ` + (selectedElement.bold ? 'buttonSelected' : '') + `">B</div>
-        <div id="propItalic" class="propMenuButton italic ` + (selectedElement.italic ? 'buttonSelected' : '') + `">i</div>
-        <div id="propUnderline" class="propMenuButton underline ` + (selectedElement.underline ? 'buttonSelected' : '') + `">u</div>`);
+    document.getElementById('propMenu').insertAdjacentHTML('beforeend', `<div id="propBold" class="propMenuButton hover centerInside bold ` + (selectedElement.bold ? 'buttonSelected' : '') + `">B</div>
+        <div id="propItalic" class="propMenuButton hover centerInside italic ` + (selectedElement.italic ? 'buttonSelected' : '') + `">i</div>
+        <div id="propUnderline" class="propMenuButton hover centerInside underline ` + (selectedElement.underline ? 'buttonSelected' : '') + `">u</div>`);
     
     // Swaps elements boldness values
     document.getElementById('propBold').addEventListener('click', () => {

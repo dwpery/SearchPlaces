@@ -47,11 +47,11 @@
             <section id="signedIn" hidden>
                 <div id="leftSideTools">
                     <div class="profileContainer">
-                        <img id="userIcon" class="userIcon" src="media/icons/userIcon.svg" alt="User">
+                        <img id="userIcon" class="userIcon border centerInside hover" src="media/icons/userIcon.svg" alt="User">
                         <span class="tooltip" inert>Log out</span>
                     </div>
                     <div class="zoomControls">
-                        <div class="zoomButton menuBtnHover curvedBorderTop" id="zoomIn">
+                        <div class="zoomButton menuBtnHover hover curvedBorderTop centerInside" id="zoomIn">
                             <svg viewBox="0 0 448 512" class="zoomIcon">
                                 <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
                             </svg>
@@ -60,7 +60,7 @@
                         <div class="menuDivider"></div>
                         <div id="zoomValue" inert>100</div>
                         <div class="menuDivider"></div>
-                        <div class="zoomButton menuBtnHover curvedBorderBottom" id="zoomOut">
+                        <div class="zoomButton menuBtnHover hover curvedBorderBottom centerInside" id="zoomOut">
                             <svg viewBox="0 0 448 512" class="zoomIcon">
                                 <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
                             </svg>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="mainControls">
-                        <div class="toolboxBtn mainButton menuBtnHover curvedBorderTop">
+                        <div class="toolboxBtn mainButton centerInside menuBtnHover hover curvedBorderTop">
                             <svg viewBox="0 0 100 100" fill="none" class="menuIcon">
                                 <g clip-path="url(#clip0_0_1)">
                                     <path d="M75.3513 22.0454C73.6411 21.8747 72.2248 21.8234 71.1025 21.8913C70.0158 21.9628 69.0877 22.2481 68.3182 22.747C67.5843 23.2496 66.9521 23.9961 66.4214 24.9868C65.9299 25.9453 65.4225 27.2441 64.8991 28.8832L63.4026 28.7339L64.8113 18.4028L99.2302 21.8372L98.5698 32.2429L97.0733 32.0936C96.8841 30.3834 96.6255 29.0082 96.2975 27.9679C96.0086 26.8955 95.5542 26.0405 94.9341 25.4028C94.314 24.7652 93.4606 24.3022 92.3738 24.0138C91.287 23.7255 89.8707 23.4942 88.1248 23.32L84.8646 22.9947L81.7449 54.2603C81.6347 55.3648 81.6171 56.2627 81.692 56.9539C81.767 57.6451 81.9809 58.2062 82.3337 58.6373C82.7222 59.0719 83.2816 59.4156 84.0121 59.6684C84.7817 59.8891 85.7865 60.0973 87.0265 60.293L86.9145 61.4154L69.1706 59.6449L69.2826 58.5225C70.5368 58.5757 71.5451 58.5683 72.3075 58.5005C73.0735 58.397 73.6738 58.151 74.1084 57.7625C74.5822 57.342 74.9117 56.7451 75.0968 55.9719C75.3175 55.2023 75.4919 54.1761 75.6199 52.8934L78.665 22.376L75.3513 22.0454Z" fill="black"/>
@@ -89,11 +89,11 @@
                             <span class="tooltip" inert>Toolbox</span>
                         </div>
                         <div class="menuDivider"></div>
-                        <div id="handBtn" class="mainButton menuBtnHover">
+                        <div id="handBtn" class="mainButton centerInside menuBtnHover hover">
 
                         </div>
                         <div class="menuDivider"></div>
-                        <div class="propertiesBtn mainButton menuBtnHover">
+                        <div class="propertiesBtn mainButton centerInside menuBtnHover hover">
                             <svg viewBox="0 0 100 100" fill="none" class="menuIcon">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M42.5638 26.8764C43.1228 25.4004 43.427 23.812 43.427 22.1573C43.427 20.5026 43.1228 18.9143 42.5639 17.4382H90.2809C92.8872 17.4382 95 19.551 95 22.1573C95 24.7636 92.8872 26.8764 90.2809 26.8764H42.5638ZM13.953 26.8764H9.7191C7.11281 26.8764 5 24.7636 5 22.1573C5 19.551 7.11281 17.4382 9.7191 17.4382H13.953C13.394 18.9143 13.0899 20.5026 13.0899 22.1573C13.0899 23.812 13.394 25.4004 13.953 26.8764Z" fill="black"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M42.5639 82.5618C43.1228 81.0858 43.427 79.4974 43.427 77.8427C43.427 76.188 43.1228 74.5996 42.5638 73.1236H90.2809C92.8872 73.1236 95 75.2364 95 77.8427C95 80.449 92.8872 82.5618 90.2809 82.5618H42.5639ZM13.953 82.5618H9.7191C7.11281 82.5618 5 80.449 5 77.8427C5 75.2364 7.11281 73.1236 9.7191 73.1236L13.953 73.1236C13.394 74.5996 13.0899 76.188 13.0899 77.8427C13.0899 79.4974 13.394 81.0858 13.953 82.5618Z" fill="black"/>
@@ -105,7 +105,7 @@
                             <span class="tooltip" inert>Properties</span>
                         </div>
                         <div class="menuDivider"></div>
-                        <div id="hideUiBtn" class="mainButton menuBtnHover">
+                        <div id="hideUiBtn" class="mainButton centerInside menuBtnHover hover">
                             <svg viewBox="0 0 100 100" fill="none" class="menuIcon">
                                 <mask id="path-1-inside-1_0_1" fill="white">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2 50.5C11.5098 34.0605 29.2842 23 49.642 23C69.9997 23 87.7742 34.0605 97.284 50.5C87.7742 66.9395 69.9997 78 49.642 78C29.2842 78 11.5098 66.9395 2 50.5Z"/>
@@ -116,7 +116,7 @@
                             <span class="tooltip" inert>Hide Editor UI</span> 
                         </div>
                         <div class="menuDivider"></div>
-                        <div class="settingsBtn mainButton menuBtnHover curvedBorderBottom">
+                        <div class="settingsBtn mainButton centerInside menuBtnHover hover curvedBorderBottom">
                             <svg viewBox="0 0 100 100" fill="none" class="menuIcon">
                                 <g clip-path="url(#clip0_0_1)">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M50 82.9268C68.185 82.9268 82.9268 68.185 82.9268 50C82.9268 31.815 68.185 17.0732 50 17.0732C31.815 17.0732 17.0732 31.815 17.0732 50C17.0732 68.185 31.815 82.9268 50 82.9268ZM50.6097 73.1707C63.0698 73.1707 73.1707 63.0698 73.1707 50.6097C73.1707 38.1497 63.0698 28.0488 50.6097 28.0488C38.1497 28.0488 28.0488 38.1497 28.0488 50.6097C28.0488 63.0698 38.1497 73.1707 50.6097 73.1707Z" fill="black"/>
@@ -143,45 +143,45 @@
                 <div id="toolbox" class="sideMenu scroll">
                     <div class="submenuHeader">
                         <div class="submenuHeaderTxt heading2" inert>Toolbox</div>
-                        <svg class="toolboxBtn submenuHeaderBtn" viewBox="0 0 60 60">
+                        <svg class="toolboxBtn hover submenuHeaderBtn" viewBox="0 0 60 60">
                             <rect x="11.8781" y="5" width="60.9835" height="9.72718" rx="4.86359" transform="rotate(45 11.8781 5)"/>
                             <rect x="5" y="48.1218" width="60.9835" height="9.72718" rx="4.86359" transform="rotate(-45 5 48.1218)"/>
                         </svg>
                     </div>
                     <div class="submenuSubheading" inert>Text</div>
-                    <div id="h1Btn" class="submenuBtn heading1"><span inert>Heading 1</span></div>
-                    <div id="h2Btn" class="submenuBtn heading2"><span inert>Heading 2</span></div>
-                    <div id="h3Btn" class="submenuBtn heading3"><span inert>Heading 3</span></div>
+                    <div id="h1Btn" class="submenuBtn centerInside hover heading1"><span inert>Heading 1</span></div>
+                    <div id="h2Btn" class="submenuBtn centerInside hover heading2"><span inert>Heading 2</span></div>
+                    <div id="h3Btn" class="submenuBtn centerInside hover heading3"><span inert>Heading 3</span></div>
                     <div class="submenuSubheading" inert>Media</div>
                     <div class="toolboxGrid">
-                        <div class="gridItem">
+                        <div class="gridItem hover" id="photoBtn">
                             <img class="toolboxSticker" src="media/icons/photo.svg" alt="Photo">
                         </div>
-                        <div class="gridItem">
+                        <div class="gridItem hover" id="gifBtn">
                             <img class="toolboxSticker" src="media/icons/gif.svg" alt="GIF">
                         </div>
-                        <div class="gridItem">
+                        <div class="gridItem hover" id="videoBtn">
                             <img class="toolboxSticker" src="media/icons/video.svg" alt="Video">
                         </div>
                     </div>
                     <div class="submenuSubheading" inert>Stickers</div>
                     <div class="toolboxGrid">
-                        <div class="gridItem" id="eek1Btn">
+                        <div class="gridItem hover" id="eek1Btn">
                             <img src="media/stickers/eek1.svg" alt="Eek1" class="toolboxSticker">
                         </div>
                     </div>
                     <div class="submenuSubheading" inert>Shapes</div>
                     <div class="toolboxGrid">
-                        <div class="gridItem" id="squareBtn">
+                        <div class="gridItem hover" id="squareBtn">
                             <img class="toolboxSticker" src="media/stickers/square.svg" alt="Square">
                         </div>
-                        <div class="gridItem" id="circleBtn">
+                        <div class="gridItem hover" id="circleBtn">
                             <img class="toolboxSticker" src="media/stickers/circle.svg" alt="Circle">
                         </div>
-                        <div class="gridItem" id="triangleBtn">
+                        <div class="gridItem hover" id="triangleBtn">
                             <img class="toolboxSticker" src="media/stickers/triangle.svg" alt="triangle">
                         </div>
-                        <div class="gridItem" id="rectangleBtn">
+                        <div class="gridItem hover" id="rectangleBtn">
                             <img class="toolboxSticker" src="media/stickers/rectangle.svg" alt="Rectangle">
                         </div>
                     </div>
@@ -197,33 +197,33 @@
                     <div class="submenuSubheading" inert>Search</div>
                     <div class="optionsContainer">
                         <div class="optionTxt">Engine</div>
-                        <div id="searchEngineBtn" class="optionBtn"><span inert>Google</span></div>
+                        <div id="searchEngineBtn" class="optionBtn hover"><span inert>Google</span></div>
                         <div id="searchEngineSelect" class="multiOptionSelector" hidden>
-                            <div id="googleBtn" class="multiOptionItem curvedBorderTop"><span inert>Google</span></div>
+                            <div id="googleBtn" class="multiOptionItem curvedBorderTop hover"><span inert>Google</span></div>
                             <div class="multiOptionDivider"></div>
-                            <div id="bingBtn" class="multiOptionItem"><span inert>Bing</span></div>
+                            <div id="bingBtn" class="multiOptionItem hover"><span inert>Bing</span></div>
                             <div class="multiOptionDivider"></div>
-                            <div id="braveBtn" class="multiOptionItem"><span inert>Brave</span></div>
+                            <div id="braveBtn" class="multiOptionItem hover"><span inert>Brave</span></div>
                             <div class="multiOptionDivider"></div>
-                            <div id="duckduckgoBtn" class="multiOptionItem"><span inert>DuckDuckGo</span></div>
+                            <div id="duckduckgoBtn" class="multiOptionItem hover"><span inert>DuckDuckGo</span></div>
                             <div class="multiOptionDivider"></div>
-                            <div id="ecosiaBtn" class="multiOptionItem"><span inert>Ecosia</span></div>
+                            <div id="ecosiaBtn" class="multiOptionItem hover"><span inert>Ecosia</span></div>
                             <div class="multiOptionDivider"></div>
-                            <div id="startpageBtn" class="multiOptionItem curvedBorderBottom"><span inert>Startpage</span></div>
+                            <div id="startpageBtn" class="multiOptionItem curvedBorderBottom hover"><span inert>Startpage</span></div>
                         </div>
                     </div>
                     <div class="optionsContainer">
                         <div class="optionTxt" inert>Destination</div>
-                        <div id="searchDestinationBtn" class="optionBtn"><span inert>New Tab</span></div>
+                        <div id="searchDestinationBtn" class="optionBtn hover"><span inert>New Tab</span></div>
                     </div>
                     <div class="submenuSubheading" inert>Background</div>
                     <div class="optionsContainer">
                         <div class="optionTxt" inert>Type</div>
-                        <div id="bgTypeBtn" class="optionBtn"><span inert>Colour</span></div>
+                        <div id="bgTypeBtn" class="optionBtn hover"><span inert>Colour</span></div>
                     </div>
                     <div id="bgColourOptions" class="optionsContainer">
                         <div class="optionTxt" inert>Colour</div>
-                        <input id="bgColourSelector" type="color">
+                        <input id="bgColourSelector" class="hover" type="color">
                     </div>
                     <div id="bgImageOptions" class="optionsContainer" hidden>
                         <div class="optionTxt" inert>Image</div>
@@ -234,31 +234,31 @@
                     <div class="settingsContainer">
                         <div class="settingsHeader">
                             <div class="settingsHeaderTxt heading1" inert>Settings</div>
-                            <svg class="settingsHeaderImg settingsBtn" viewBox="0 0 60 60">
-                                <rect x="11.8781" y="5" width="60.9835" height="9.72718" rx="4.86359" transform="rotate(45 11.8781 5)" fill="black"/>
-                                <rect x="5" y="48.1218" width="60.9835" height="9.72718" rx="4.86359" transform="rotate(-45 5 48.1218)" fill="black"/>
+                            <svg class="settingsHeaderImg settingsBtn hover" viewBox="0 0 60 60">
+                                <rect class="hover" x="11.8781" y="5" width="60.9835" height="9.72718" rx="4.86359" transform="rotate(45 11.8781 5)" fill="black"/>
+                                <rect class="hover" x="5" y="48.1218" width="60.9835" height="9.72718" rx="4.86359" transform="rotate(-45 5 48.1218)" fill="black"/>
                             </svg>
                         </div>
-                        <div class="setHeading" id="genSetHeader"><span inert>General</span></div>
+                        <div class="setHeading hover" id="genSetHeader"><span inert>General</span></div>
                         <div id="gsContainer" class="settingsBtnConClosed" hidden>
                             <div class="settingBtnContainer">
                                 <div class="settingLbl" inert>Privacy Policy</div>
-                                <div class="settingBtn"><span inert>View</span></div>
+                                <div class="settingBtn hover"><span inert>View</span></div>
                             </div>
                             <div class="settingBtnContainer">
                                 <div class="settingLbl" inert>Clear App Data</div>
-                                <div class="settingBtn"><span inert>Clear</span></div>
+                                <div class="settingBtn hover"><span inert>Clear</span></div>
                             </div>
                         </div>
-                        <div class="setHeading" id="custSetHeader"><span inert>Customisation</span></div>
+                        <div class="setHeading hover" id="custSetHeader"><span inert>Customisation</span></div>
                         <div id="csContainer" class="settingsBtnConClosed" hidden>
                             <div class="settingBtnContainer">
                                 <div class="settingLbl" inert>UI Theme</div>
-                                <div class="settingBtn"><span inert>System</span></div>
+                                <div class="settingBtn hover"><span inert>System</span></div>
                             </div>
                             <div class="settingBtnContainer">
                                 <div class="settingLbl" inert>Accent Colour</div>
-                                <div class="settingBtn"><span inert>sus</span></div>
+                                <div class="settingBtn hover"><span inert>sus</span></div>
                             </div>
                         </div>
                         <div class="setHeading" id="bdSetHeader"><span inert>Build Details</span></div>
@@ -280,7 +280,7 @@
                 </div>
                 <div id="userContent" class="bgColour">
                     <div class="searchBar">
-                        <img id="searchIcon" src="media/branding/shortLogo.svg" alt="Search">
+                        <img id="searchIcon" class="hover" src="media/branding/shortLogo.svg" alt="Search">
                         <div class="searchDecor"></div>
                         <input id="searchBox" type="text" placeholder="Search...">
                     </div>
