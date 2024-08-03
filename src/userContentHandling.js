@@ -115,6 +115,8 @@ function makeDraggable(element) {
         initialY = event.clientY - element.offsetTop;
 
         recentID = element.id;
+        document.getElementById(recentID).classList.toggle('grabbed');
+        document.getElementById(recentID).classList.toggle('grabbable');
 
         // Asses what element is selected and fills prop menu + functionality
         var selectedElement = userElements.find(element => element.id === recentID);
@@ -158,6 +160,8 @@ function makeDraggable(element) {
     document.addEventListener('mouseup', () => {
         isDragging = false;
         currentDraggableElement = null;
+        document.getElementById(recentID).classList.toggle('grabbed');
+        document.getElementById(recentID).classList.toggle('grabbable');
     })
 }
 

@@ -8,6 +8,10 @@
     cursor: grab;
 }
 
+.grabbed:hover {
+    cursor: grabbing;
+}
+
 .heading1 {
     font-size: 7vh;
 }
