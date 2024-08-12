@@ -194,6 +194,8 @@ class Element {
             this.underline = false;
         } else if (type == "shape") {
             this.fill = '#000000';
+        } else if (type == "media") {
+            this.href = '';
         }
     }
 }

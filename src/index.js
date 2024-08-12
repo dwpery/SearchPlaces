@@ -290,14 +290,16 @@ document.addEventListener('keydown', (event) => {
 
 // -- Toolbox --
 
-import {createHeading, createSVG} from "./userContentHandling.js";
+import {createHeading, createSVG, createMedia} from "./userContentHandling.js";
 
 // Text
 document.getElementById('h1Btn').addEventListener('click', () => createHeading('heading1'));
 document.getElementById('h2Btn').addEventListener('click', () => createHeading('heading2'));
 document.getElementById('h3Btn').addEventListener('click', () => createHeading('heading3'));
+
 //Stickers
 document.getElementById('eek1Btn').addEventListener('click', () => createSVG('eek1', 'sticker'));
+
 //Shapes
 document.getElementById('squareBtn').addEventListener('click',() => createSVG('square', 'shape'));
 document.getElementById('circleBtn').addEventListener('click',() => createSVG('circle', 'shape'));
