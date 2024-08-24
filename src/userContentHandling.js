@@ -44,7 +44,7 @@ document.addEventListener("click", (event) => {
 
 // Delete Element btn + EventListeners
 function binBtn(selectedElement) {
-    document.getElementById('propMenu').innerHTML += `<img id="delElementBtn" class="propMenuButton hover centerInside" src="media/icons/bin.svg">`;
+    document.getElementById('propMenu').innerHTML += `<img id="delElementBtn" class="propMenuButton propBinButton hover centerInside" src="media/icons/bin.svg">`;
     
     document.getElementById('delElementBtn').addEventListener('click', () => {
         // Removes element from DOM + hides PropMenu

@@ -490,8 +490,14 @@ path, rect, circle, ellipse {
 }
 
 .propMenuButton:hover, .buttonSelected {
-    background-color: #c0c0c0;
+    background-color: var(--themeColour);
+    color: #FFF;
     border-radius: 0;
+}
+
+.propBinButton:hover, .propBinButton:hover svg {
+    background-color: #F00;
+    fill: #FFF;
 }
 
 .propLabel {
@@ -501,9 +507,11 @@ path, rect, circle, ellipse {
 
 .propInput {
     outline: none;
+    border: none;
     width: 4vh;
+    background-color: #c0c0c0;
+    transition: 0.5s;
 }
-
 #mediaMenu {
     position: fixed;
     left: 50%;

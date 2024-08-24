@@ -290,12 +290,19 @@ document.addEventListener('keydown', (event) => {
 
 // -- Toolbox --
 
-import {createHeading, createSVG, createMedia} from "./userContentHandling.js";
+import {createHeading, createSVG} from "./userContentHandling.js";
 
 // Text
 document.getElementById('h1Btn').addEventListener('click', () => createHeading('heading1'));
 document.getElementById('h2Btn').addEventListener('click', () => createHeading('heading2'));
 document.getElementById('h3Btn').addEventListener('click', () => createHeading('heading3'));
+
+// Media
+/*
+document.getElementById('photoBtn').addEventListener('click', () => createMedia('photo'));
+document.getElementById('gifBtn').addEventListener('click', () => createMedia('gif'));
+document.getElementById('videoBtn').addEventListener('click', () => createMedia('video'));
+*/
 
 //Stickers
 document.getElementById('eek1Btn').addEventListener('click', () => createSVG('eek1', 'sticker'));
