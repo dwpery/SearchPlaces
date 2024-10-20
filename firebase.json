@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "dist",
-    "site": "searchplaces",
     "ignore": [
       "firebase.json",
       "**/.*",
