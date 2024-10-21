@@ -5,15 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Auth | SearchPlaces</title>
         <script defer src="../bundle.js"></script>
+        <link rel="stylesheet" href="auth.css">
     </head>
     <body>
-        <h1>Auth Page</h1>
-        <input id="emailInput" type="text">
-        <input id="passwordInput" type="password">
-        <button id="logIn">Log In</button>
-        <button id="signUp">Sign Up</button>
-        <p>Or sign in with:</p>
-        <button id="googleAuth">Google</button>
-        <button id="githubAuth">Github</button>
+        <div class="wrapper">
+            <img class="logInLogo" src="../branding/fullLogoWhite.svg" alt="SearchPlaces">
+            <div class="orContainer">
+                <button class="authOption authSelected" id="setLogIn">Log In</button>
+                <span class="orLabel">Or</span>
+                <button class="authOption" id="setSignUp">Sign Up</button>
+            </div>
+            <p class="inputLabels">Email</p>
+            <input class="loginInput" id="emailInput" type="text">
+            <p class="inputLabels">Password</p>
+            <input class="loginInput" id="passwordInput" type="password">
+            <div id="logIn">
+                <button class="loginBtn" id="logInBtn">Log In</button>
+            </div>
+            <div id="signUp" hidden="true">
+                <p class="inputLabels">Confirm Password</p>
+                <input class="loginInput" id="confirmPasswordInput" type="password">
+                <button class="loginBtn" id="signUpBtn">Sign Up</button>
+            </div>
+            <p id="errorLabel" class="inputLabels"></p>
+            <div class="orContainer">
+                <div class="orBar"></div>
+                <span class="orLabel">Or</span>
+                <div class="orBar"></div>
+            </div>
+            <div class="iconBtnContainer">
+                <div class="authBtn" id="microsoftAuth">
+                    <img class="authIcon" src="../branding/microsoft.svg" alt="Microsoft">
+                </div>
+                <div class="authBtn" id="googleAuth">
+                    <img class="authIcon" src="../branding/google.svg" alt="Google">
+                </div>
+                <div class="authBtn" id="githubAuth">
+                    <img class="authIcon" src="../branding/github.svg" alt="Github">
+                </div>
+            </div>
+        </div>
     </body>
 </html>

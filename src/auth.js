@@ -1,5 +1,12 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup  } from 'firebase/auth';
 
+export function swapAuthMode() {
+    document.getElementById('setLogIn').classList.toggle('authSelected');
+    document.getElementById('setSignUp').classList.toggle('authSelected');
+    document.getElementById('logIn').style.display = document.getElementById('logIn').style.display === 'none' ? 'flex' : 'none';
+    document.getElementById('signUp').style.display = document.getElementById('signUp').style.display === 'flex' ? 'none' : 'flex';
+}
+
 // Popup function for oAuth
 export function popupAuthLogin(auth, provider) {
     signInWithPopup(auth, provider)

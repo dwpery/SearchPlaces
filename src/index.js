@@ -12,7 +12,7 @@ const firebaseApp = initializeApp({
 
 // Funtions for Authentication
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, GithubAuthProvider, signOut  } from 'firebase/auth';
-import {emailLogIn, emailSignUp } from "./auth.js";
+import {emailLogIn, emailSignUp, swapAuthMode } from "./auth.js";
 
 // Firebase Auth object
 const auth = getAuth(firebaseApp);
@@ -31,9 +31,12 @@ onAuthStateChanged(auth, user => {
             location.href='https://chromiumplaces.web.app/auth/'
         }
 
+        document.getElementById("setLogIn").addEventListener('click', async () => swapAuthMode());
+        document.getElementById("setSignUp").addEventListener('click', async () => swapAuthMode());
+
         // Email + Password auth functions
-        document.getElementById("logIn").addEventListener('click', async () => emailLogIn(document.getElementById('emailInput').value, document.getElementById('passwordInput').value, auth));
-        document.getElementById("signUp").addEventListener('click', async () => emailSignUp(document.getElementById('emailInput').value, document.getElementById('passwordInput').value, auth));
+        document.getElementById("logInBtn").addEventListener('click', async () => emailLogIn(document.getElementById('emailInput').value, document.getElementById('passwordInput').value, auth));
+        document.getElementById("signUpBtn").addEventListener('click', async () => emailSignUp(document.getElementById('emailInput').value, document.getElementById('passwordInput').value, auth));
         // Functionality to oAuth icons
         document.getElementById('googleAuth').addEventListener('click', async () => popupAuthLogin(auth, new GoogleAuthProvider()));
         document.getElementById('githubAuth').addEventListener('click', async () => popupAuthLogin(auth, new GithubAuthProvider()));

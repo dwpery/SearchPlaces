@@ -1,27 +1,14 @@
-#loader {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFF;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-  
-.spinning-path {
-    animation: spin 2.25s linear infinite;
-}
-#signedOut {
-    position: absolute;
-    height: 100%;
+body {
+    margin: 0;
+    padding: 0;
     width: 100%;
+    height: 100%;
     color: #FFF;
     background-color: #702766;
+    font-family: "Inter", sans-serif;
+    position: absolute;
 }
 
 .wrapper {
@@ -72,6 +59,7 @@
     border: none;
     font-size: 2vh;
     padding: 1.5vh;
+    margin-top: 2vh;
     width: 40%;
     border-radius: 5vh;
     font-weight: bolder;
@@ -131,8 +119,26 @@
     width: 8vh;
 }
 
-@media screen and (max-width: 1200px) {
-    .wrapper {
-        width: 100%;
-    }
+#logIn, #signUp {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#logIn { display: flex; }
+#signUp { display: none; }
+
+.authOption { 
+    color: #FFF;
+    font-size: 3vh;
+    padding: 1vh;
+    border-radius: 2vh;
+    border: none;
+    background-color: #702766;
+    transition: 0.5s;
+}
+
+.authSelected {
+    background-color: #0038FF;
+    font-weight: bolder;
 }
