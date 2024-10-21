@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, signOut  } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup  } from 'firebase/auth';
 
 // Popup function for oAuth
 export function popupAuthLogin(auth, provider) {
